@@ -1,0 +1,12 @@
+Construct a policy-process chronological analysis:
+1. **Historical Timeline** — Key events in chronological order. For each entry:
+   - Date (as specific as possible)
+   - Event description
+   - Policy significance (why this was a turning point)
+   - Type: [Legislative | Regulatory | Judicial | Executive | Political | Research]
+2. **Legislative History** — If legislation is involved: introduction date, committee referrals, hearings, markups, floor votes, conference, enactment, and any subsequent amendments or reauthorizations
+3. **Regulatory History** — If agency action is involved: ANPRM, NPRM, comment periods, final rule, effective date, legal challenges, and implementation status
+4. **Current Status** — Where the issue stands right now. What is the most recent development?
+5. **Upcoming Deadlines and Scheduled Events** — Comment periods closing, implementation dates, court hearing dates, legislative calendar milestones, authorization expirations, or election-related timing
+
+Be as specific with dates as possible. Distinguish between events that are confirmed vs. projected.

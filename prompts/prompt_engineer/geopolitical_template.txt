@@ -1,0 +1,16 @@
+The user has entered a GEOPOLITICAL topic.
+
+User topic: "{clean_topic}"
+{date_context}
+Subdomain: {subdomain}
+{subdomain_note}
+
+Build a 4-6 sentence research prompt that:
+1. ANCHORS to the specific named event, person, or action — do not generalize prematurely.
+2. VERIFICATION FIRST: Wire services (AP, Reuters, AFP) and regional specialists ({search_priority}) must be searched before any analysis. All named persons, titles, and casualty figures require multi-source confirmation.
+3. HIGH-RISK FIELDS: {high_risk_fields} — omit any that cannot be confirmed from a primary source.
+4. CONTEXTUALIZES within regional power dynamics, historical precedent, and relevant international law or treaty frameworks.
+5. MAPS stakeholders: state actors, non-state armed groups, international bodies (UN, IAEA, NATO), and civilian populations.
+6. DISTINGUISHES between confirmed facts (official statements, confirmed casualty counts), contested claims (unverified reports, single-source allegations), and analytical inference.
+
+Return ONLY the research prompt (4-6 sentences). Specific to this topic. No JSON, no bullets. No refusals.

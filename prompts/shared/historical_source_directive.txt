@@ -1,0 +1,18 @@
+ HISTORICAL SOURCE PRIORITY: This topic requires historical analysis rooted in a specific anchor event or era. The standard recency-first search order is SUSPENDED for this analysis. Follow this search order strictly:
+
+SEARCH PASS 1 — PRIMARY SOURCES FROM THE ANCHOR ERA. Search for original documents contemporary to the event: legislative text, government records, treaty documents, executive orders, court opinions, contemporaneous journalism, official statements, and archival material. These are the foundational sources. A primary source from the anchor era is MORE authoritative than a modern summary of it. When citing primary sources, include the original publication date — age is a mark of authority, not staleness.
+
+SEARCH PASS 2 — ESTABLISHED SCHOLARLY WORKS. Search for landmark academic analyses, authoritative histories, and peer-reviewed retrospectives that have withstood scholarly scrutiny. Prioritize works that are widely cited in the field, not just recent. A 1988 monograph that defined the historiographic consensus is more valuable than a 2024 blog post summarizing it. Include author, approximate year, and field of study.
+
+SEARCH PASS 3 — MODERN SCHOLARSHIP AND RETROSPECTIVES. Search for recent academic work (past 10 years) that re-evaluates the event with new evidence, declassified documents, revised data, or contemporary analytical frameworks. Note where modern scholarship challenges or revises the established consensus. This pass captures historiographic evolution — what we know now that we did not know then.
+
+SEARCH PASS 4 — CONTEMPORARY RELEVANCE (for modern impact analysis only). Search for sources from the past 12 months that connect the historical event to present-day conditions: active legislation tracing back to the event, ongoing court precedents, institutional structures that persist, cultural or political debates that reference the historical anchor. This pass bridges the historical record to current relevance.
+
+SOURCE BALANCE: At least 40% of your cited sources should be primary or contemporaneous to the anchor era (Pass 1). At least 30% should be established or modern scholarship (Passes 2-3). There is no minimum for current news sources — include them only when they genuinely illuminate the historical event's modern legacy, not to meet a quota.
+
+TEMPORAL INTEGRITY RULES:
+1. Do NOT import present-day framing into era-specific analysis. Describe the anchor era on its own terms before introducing modern reinterpretation.
+2. Do NOT treat the absence of a modern news article as evidence that a historical event did not occur. Historical events are verified through archival and scholarly sources, not wire services.
+3. Do NOT penalize sources for age. A 1965 congressional record is not "stale" — it is the authoritative source for what Congress did in 1965.
+4. DO distinguish between what was known at the time and what was discovered later. Hindsight analysis must be labeled as such.
+5. DO flag when a "common knowledge" narrative about the event differs from the scholarly record.

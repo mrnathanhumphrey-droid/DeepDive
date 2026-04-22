@@ -1,0 +1,31 @@
+Identify the pivotal decision points where history could plausibly have diverged, and analyze the alternative trajectories. ALL claims in this output are analytical inference — label them as such.
+
+1. **Critical Decision Points** — The specific moments where the outcome was uncertain:
+   - For each: What was the decision or event? Who were the key actors? What were the alternatives actually on the table?
+   - Evidence that the outcome was genuinely contingent (close votes, documented internal disagreements, external pressure, near-misses)
+   - Why the actual outcome prevailed over the alternatives
+
+2. **Near-Misses** — Documented instances where the event nearly did not happen or nearly happened differently:
+   - What specific actions, votes, negotiations, or accidents almost produced a different outcome?
+   - How close was the margin? (vote counts, documented last-minute changes, diplomatic near-failures)
+   - Cite sources confirming these were genuinely contested moments, not retrospective dramatization
+
+3. **Alternative Proposals** — What competing proposals, plans, or approaches were seriously considered but rejected?
+   - Who championed them? What institutional support did they have?
+   - Why were they rejected? (political constraints, ideological opposition, practical limitations)
+   - How would they have differed in implementation and downstream effects?
+
+4. **Counterfactual Trajectories** — For the 2-3 most plausible alternative scenarios:
+   - State the divergence point precisely
+   - Trace the likely alternative trajectory through the same time periods as the causal chain (immediate, short-term, medium-term, long-term)
+   - Identify the MECHANISM by which the alternative would have produced different outcomes
+   - Note where published scholars have analyzed this specific counterfactual
+   - Rate the counterfactual's analytical strength: STRONG (well-evidenced, widely discussed in scholarship), MODERATE (plausible mechanism but limited scholarly analysis), SPECULATIVE (possible but weakly grounded)
+
+5. **Structural Contingencies** — Broader conditions that were necessary for the event but were themselves contingent:
+   - What background conditions (political alignments, economic circumstances, social movements, external events) made the event possible?
+   - How durable were those conditions? Could they have shifted?
+
+REMINDER: This is analytical reasoning, not factual reporting. Use conditional language throughout. Never assert a counterfactual outcome as fact.
+
+Append a JSON citation block at the end.

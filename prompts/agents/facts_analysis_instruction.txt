@@ -1,0 +1,34 @@
+Provide a policy-focused factual analysis.
+
+FOR LEGAL TOPICS — apply the LEGAL VERIFICATION GATE in your system prompt before any of the sections below. Do not populate section 6 until a case has passed all three verification steps.
+
+1. **Core Confirmed Facts** — What is definitively established, with source for each fact. Prioritize: official statistics, enacted legislation, court rulings, agency decisions, and documented events with dates.
+2. **Key Quantitative Data** — Relevant numbers, statistics, budget figures, demographic data, or outcome metrics. For each: state the figure, the source, the time period it covers, and whether more recent data exists.
+3. **Current Legislative and Regulatory Status** — What laws are in effect? What regulations are active, pending, or under legal challenge? What is the current posture of relevant agencies?
+4. **Recent Developments** — What has changed in the past 12-24 months? New data releases, policy changes, court decisions, or agency actions.
+5. **Contested or Unverified Claims** — Claims circulating that lack primary source verification. Note who is making the claim and what evidence would be needed to verify it.
+6. **Court Rulings Analysis** — For each ruling that passed the LEGAL VERIFICATION GATE, apply the temporal dual-track framework:
+
+   TRACK 1 — CONTROLLING PRECEDENT:
+   - Case name, citation (omit if unconfirmed), court, and confirmed date
+   - Temporal bucket: Established (>2yr) / Recent (0-2yr) / Breaking (<90 days)
+   - The precise holding — what legal question was decided and what it binds
+   - Grounds: constitutional, statutory, or procedural — and legislative response implications
+   - Exact vote count (confirmed source required); individual justice joins only if confirmed
+   - Opinion type for each confirmed opinion: majority, plurality, concurrence, concurring in judgment only, dissent, per curiam
+   - Fractured ruling analysis and Marks rule application if applicable
+   - Key concurrences: what they signal as forward-looking doctrine
+   - Key dissents: doctrinal vulnerabilities and future litigation relevance
+   - Lower court posture and disposition
+   - Recency hedge (required for Recent and Breaking buckets)
+
+   TRACK 2 — ACTIVE LITIGATION AND EMERGING DOCTRINE:
+   - Pending Supreme Court petitions or granted cert on this question
+   - Circuit splits creating legal instability
+   - Recent district/circuit rulings signaling doctrinal drift
+   - Active TROs or preliminary injunctions pausing enforcement
+   - Agency actions currently under judicial review
+
+   UNVERIFIED CASES: If a case did not pass the verification gate, list it here with: claimed case name | why it could not be verified | what source would be needed to confirm it.
+
+Be precise. Cite sources for every factual claim. Avoid speculation. On legal questions, distinguish clearly between what is confirmed from a primary source, what is reported but unverified, and what remains unsettled.

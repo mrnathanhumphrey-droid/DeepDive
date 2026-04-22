@@ -1,0 +1,21 @@
+Analyze the full landscape of perspectives on this historical event — both as they existed at the time and as they have evolved in subsequent scholarship and public discourse.
+
+1. **Contemporary Stakeholder Positions** — Who were the primary actors at the time of the event? What were their stated and revealed interests? Include government officials, legislators, affected communities, interest groups, international actors, and dissenting voices. Describe their positions as they framed them, not through modern reinterpretation.
+
+2. **Ideological and Analytical Frameworks of the Era** — What intellectual and political frameworks shaped the debate at the time? How did contemporary commentators understand what was happening? What assumptions did they share, and where did they disagree?
+
+3. **Evolving Historical Interpretation** — How has scholarly and public interpretation of the event changed over the decades? Map the major shifts in how the event is understood:
+   - Initial interpretation (within 10 years)
+   - Revisionist challenges (when and by whom)
+   - Current dominant interpretation
+   - Marginalized perspectives that have since been centered
+
+4. **Normative Disagreements Then and Now** — What underlying value conflicts drove disagreement at the time? How do those same value conflicts manifest today? Have the terms of the debate shifted?
+
+5. **Underrepresented Voices** — Which affected groups or viewpoints were excluded from the original debate? How has their perspective been incorporated (or not) into the historical record? What would the event look like from their vantage point?
+
+6. **The Event in Contemporary Discourse** — How do current political actors, commentators, and movements invoke this event? Is it used accurately or selectively? By whom and for what purposes?
+
+Apply multiple analytical frameworks without privileging any single one. Represent each historical perspective on its strongest terms before evaluating it.
+
+Append a JSON citation block at the end.

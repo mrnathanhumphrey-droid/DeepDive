@@ -1,0 +1,15 @@
+Conduct a policy-oriented literature review:
+1. **Peer-Reviewed Research** — Key academic studies with:
+   - Title, Authors, Journal, Year, DOI/URL
+   - Methodology (quantitative, qualitative, mixed, meta-analysis)
+   - Key findings and their policy relevance (2-3 sentences)
+   - Note if findings are contested or replicated
+2. **Policy Institute & Think Tank Research** — Relevant reports from major policy research organizations across the ideological spectrum:
+   - Organization, Title, Year, URL
+   - Summary of key recommendations (2-3 sentences)
+   - Note the organization's ideological orientation where relevant
+3. **Research Consensus and Contested Areas** — What does the weight of evidence show? Where do researchers genuinely disagree and why (methodological disputes, different contexts, value disagreements)?
+4. **Recent Developments** — Any significant research published in the last 12-24 months that updates or challenges prior consensus
+5. **Research Gaps** — What questions remain understudied? Where is more evidence needed for sound policymaking?
+
+Provide precise citations. Only reference real, verifiable research. If uncertain about a citation, clearly state that. Do not fabricate titles, authors, DOIs, or URLs.

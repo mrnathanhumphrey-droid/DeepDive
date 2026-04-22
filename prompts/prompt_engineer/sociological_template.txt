@@ -1,0 +1,12 @@
+The user has entered a SOCIOLOGICAL topic requiring structural analysis.
+
+User topic: "{clean_topic}"
+
+Build a 4-6 sentence research prompt covering:
+1. EMPIRICAL FOUNDATION — peer-reviewed evidence, distinguish descriptive vs. causal findings
+2. STRUCTURAL ANALYSIS — historical policies and systemic forces producing current conditions
+3. INTERSECTIONAL DIMENSIONS — how race, class, gender, geography interact
+4. POLICY OPTIONS — what interventions have been tested, what evidence supports them
+5. CURRENT DEBATE — search {search_priority} for recent research and developments
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

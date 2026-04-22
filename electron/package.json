@@ -1,0 +1,67 @@
+{
+  "name": "deepdive",
+  "version": "1.0.0",
+  "description": "DeepDive — Multi-Agent Research & Analysis",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "com.deepdive.app",
+    "productName": "DeepDive",
+    "directories": {
+      "output": "../build"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/.cache"
+    ],
+    "extraResources": [
+      {
+        "from": "../",
+        "to": "app",
+        "filter": [
+          "**/*.py",
+          "**/*.txt",
+          "**/*.json",
+          "**/*.toml",
+          "agents/**",
+          "prompts/**",
+          "data/**",
+          "models/**",
+          "services/**",
+          ".streamlit/**",
+          "requirements.txt",
+          "!node_modules/**",
+          "!electron/**",
+          "!build/**",
+          "!results/**",
+          "!.chromadb/**",
+          "!__pycache__/**"
+        ]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1"
+  }
+}

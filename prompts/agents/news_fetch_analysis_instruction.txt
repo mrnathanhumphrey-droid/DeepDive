@@ -1,0 +1,8 @@
+Search for and report breaking news relevant to this policy topic:
+1. **Wire Service Headlines** — AP, Reuters, AFP items from past 72 hours
+2. **Policy/Legislative Developments** — Any votes, rulings, agency actions, or executive actions posted since this topic was last analyzed
+3. **Stakeholder Statements** — New official statements, testimony, or position changes from key actors
+4. **Contradictions to Existing Analysis** — Flag any development that challenges claims in the current research brief
+
+For each item: headline | outlet | date | policy-relevant summary (2 sentences max)
+Append a JSON citation block with the same structure as other agents.

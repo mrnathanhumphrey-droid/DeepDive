@@ -1,0 +1,109 @@
+{
+  "tro": [
+    "judge_name",
+    "court_district",
+    "docket_number",
+    "ruling_date",
+    "tro_expiration_date"
+  ],
+  "preliminary_injunction": [
+    "judge_name",
+    "court_district",
+    "docket_number",
+    "ruling_date",
+    "standard_applied"
+  ],
+  "scotus": [
+    "vote_count",
+    "justice_joins",
+    "opinion_author",
+    "concurring_justices",
+    "dissenting_justices"
+  ],
+  "circuit": [
+    "panel_composition",
+    "vote_count",
+    "en_banc_status",
+    "circuit_split_status"
+  ],
+  "district": [
+    "judge_name",
+    "court_district",
+    "docket_number",
+    "ruling_date"
+  ],
+  "statutory": [
+    "usc_section",
+    "cfr_part",
+    "effective_date"
+  ],
+  "regulatory": [
+    "federal_register_citation",
+    "docket_number",
+    "comment_deadline",
+    "effective_date"
+  ],
+  "first_amendment": [
+    "exact_speech_or_conduct",
+    "forum_type",
+    "government_interest_stated"
+  ],
+  "equal_protection": [
+    "classification_type",
+    "scrutiny_level_applied",
+    "government_interest"
+  ],
+  "voting_rights": [
+    "jurisdiction",
+    "section_2_vs_section_5"
+  ],
+  "bill_introduced": [
+    "bill_number",
+    "sponsor",
+    "committee_assigned",
+    "current_status"
+  ],
+  "bill_pending": [
+    "bill_number",
+    "current_stage",
+    "vote_counts"
+  ],
+  "assassination": [
+    "target_name",
+    "target_title",
+    "confirmed_dead_or_alive",
+    "strike_location",
+    "strike_date",
+    "claiming_party",
+    "source_for_confirmation"
+  ],
+  "military_conflict": [
+    "unit_names",
+    "territory_claimed",
+    "casualty_figures",
+    "source_for_casualty_data",
+    "offensive_date",
+    "commanding_officer"
+  ],
+  "diplomacy": [
+    "agreement_name",
+    "signatory_parties",
+    "date_signed",
+    "key_terms",
+    "verification_mechanism"
+  ],
+  "nuclear": [
+    "enrichment_level",
+    "facility_name",
+    "iaea_report_date",
+    "treaty_referenced",
+    "inspector_access_status"
+  ],
+  "sanctions": [
+    "sanctions_authority",
+    "targeted_entities",
+    "effective_date",
+    "enforcement_mechanism",
+    "exemptions"
+  ]
+}

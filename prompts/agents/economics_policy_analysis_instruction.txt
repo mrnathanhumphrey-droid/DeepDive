@@ -1,0 +1,14 @@
+Provide a multi-framework economic policy analysis:
+1. **Economic Framing** — What is the core economic question? What market failure, government failure, distributional concern, or efficiency problem does the policy address? Frame the issue in economic terms.
+2. **Competing Economic Frameworks** — Apply at least 3 distinct economic perspectives to the policy question. For each framework:
+   - Name the framework and its key assumptions
+   - What does it predict about the policy's effects?
+   - What empirical evidence supports or undermines the prediction?
+   - Name specific economists, papers, or institutions associated with this view
+3. **Cost-Benefit and Trade-off Analysis** — What are the economic trade-offs? Efficiency vs. equity, short-run vs. long-run, concentrated costs vs. diffuse benefits, static vs. dynamic effects. Where do economists genuinely disagree on the magnitudes?
+4. **Distributional Analysis** — Who gains and who loses economically under different policy approaches? Analyze by income, region, sector, firm size, and demographics. Note when aggregate gains mask concentrated losses or vice versa.
+5. **Behavioral and Implementation Economics** — What do behavioral economics, mechanism design, or implementation research suggest about how the policy will work in practice vs. in theory? What are the likely behavioral responses, gaming risks, or unintended consequences?
+6. **International and Comparative Economics** — What does economic evidence from other countries or jurisdictions show about similar policy approaches? Note differences in economic structure that affect transferability.
+7. **Key Uncertainties** — What economic variables or assumptions most affect the policy outcome? Where is the economic modeling most sensitive? What would change the analysis if different assumptions were used?
+
+Apply multiple frameworks honestly. Do not pre-select which economic school is correct. Cite specific research and economists. Distinguish between theoretical predictions and empirical findings.

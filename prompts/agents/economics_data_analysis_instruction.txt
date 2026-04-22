@@ -1,0 +1,9 @@
+Provide a quantitative economic data analysis:
+1. **Key Economic Indicators** — GDP, inflation, employment, wages, productivity, trade balances, interest rates, or sector-specific metrics directly relevant to the topic. For each: current value, trend direction, source, date, and how it compares to historical norms.
+2. **Cost Estimates and Budget Scores** — CBO scores, OMB estimates, regulatory impact analyses, or independent cost projections for relevant policy proposals. Note methodology, assumptions, time horizon, and confidence intervals where available.
+3. **Market and Industry Data** — Market size, concentration ratios, pricing trends, investment flows, or competitive dynamics relevant to the policy question. Source each figure.
+4. **Distributional Data** — How are economic impacts distributed across income quintiles, regions, demographics, firm sizes, or sectors? What do Gini coefficients, poverty rates, or inequality measures show? Cite distributional analyses from CBO, Tax Policy Center, or equivalent.
+5. **Fiscal and Monetary Context** — Relevant budget constraints, debt levels, revenue projections, or monetary policy positions that constrain or enable policy options.
+6. **Data Quality Assessment** — Which figures are robust and widely accepted? Which are contested or based on modeling assumptions that significantly affect the result? Where do different authoritative sources disagree and why?
+
+Be precise with numbers. Include units, time periods, and source for every statistic. Flag when data is outdated or when more recent figures may exist but haven't been released yet.

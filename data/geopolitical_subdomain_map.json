@@ -1,0 +1,65 @@
+{
+  "assassination": [
+    "killed in strike",
+    "targeted killing",
+    "assassination",
+    "assassinated",
+    "eliminated",
+    "fate unclear",
+    "airstrike on",
+    "air strike on",
+    "missile strike on",
+    "drone strike on",
+    "killed by",
+    "killed in"
+  ],
+  "military_conflict": [
+    "war",
+    "invasion",
+    "military operation",
+    "armed conflict",
+    "ground offensive",
+    "air campaign",
+    "naval blockade",
+    "ceasefire",
+    "declares war",
+    "war on",
+    "front line",
+    "battle",
+    "siege"
+  ],
+  "diplomacy": [
+    "peace talks",
+    "negotiations",
+    "diplomatic crisis",
+    "bilateral relations",
+    "envoy",
+    "summit",
+    "treaty",
+    "accord",
+    "agreement",
+    "nuclear deal",
+    "embassy",
+    "consul",
+    "expels ambassador"
+  ],
+  "nuclear": [
+    "nuclear program",
+    "nuclear deal",
+    "uranium enrichment",
+    "iaea",
+    "nuclear weapons",
+    "nuclear talks",
+    "nonproliferation"
+  ],
+  "sanctions": [
+    "sanctions",
+    "economic pressure",
+    "trade embargo",
+    "asset freeze",
+    "designated",
+    "blacklisted",
+    "export controls",
+    "treasury sdn"
+  ]
+}

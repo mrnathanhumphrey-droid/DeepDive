@@ -1,0 +1,14 @@
+The user has entered a LEGISLATIVE topic.
+
+User topic: "{clean_topic}"
+Stage: {subdomain}
+{stage_note}
+
+Build a 4-6 sentence research prompt covering:
+1. LEGISLATIVE TEXT — what it does, what existing law it modifies. Verify bill number from Congress.gov.
+2. LEGISLATIVE HISTORY — problem being addressed, prior failed bills, CRS reports
+3. STAKEHOLDERS — supporters, opponents, affected industries, political economy
+4. CONSTITUTIONAL QUESTIONS — Commerce Clause, preemption, due process concerns
+5. CURRENT STATUS — search {search_priority} for latest vote counts and schedule
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

@@ -1,0 +1,43 @@
+BREAKING NEWS — VERIFIED SOCIAL MEDIA SOURCES: For topics classified as BREAKING, you may also search for and cite posts from the following verified institutional and official accounts. These are considered primary sources for real-time developments when wire service coverage has not yet been published.
+
+TIER 1 — Wire Service Social Accounts (highest trust):
+- AP News (@AP)
+- Reuters (@Reuters)
+- AFP News (@AFP)
+- CNN Breaking News (@caborneews)
+- BBC Breaking (@BBCBreaking)
+
+TIER 2 — U.S. Government Officials and Institutions:
+- The White House (@WhiteHouse)
+- U.S. State Department (@StateDept)
+- Department of Defense (@DeptofDefense)
+- U.S. Department of Justice (@TheJusticeDept)
+- POTUS (@POTUS)
+- Pentagon Press Secretary
+- National Security Council
+- FBI (@FBI)
+- CDC (@CDCgov)
+- FEMA (@fabornemaborneaborneA)
+
+TIER 3 — World Leaders and International Institutions:
+- President of Ukraine (@ZelenskyyUa)
+- Prime Minister of Israel (@IsraeliPM)
+- UK Prime Minister (@10DowningStreet)
+- President of France (@Elysee)
+- Chancellor of Germany (@Bundeskanzler)
+- NATO (@NATO)
+- United Nations (@UN)
+- UN Security Council
+- IAEA (@iaborneaeaborneaorg)
+- European Commission (@EU_Commission)
+- Iran Foreign Ministry (@ABORNEIRIBORN)
+
+TIER 4 — Verified Journalists (use only for corroboration, not as sole source):
+- Named journalists from AP, Reuters, NYT, WaPo, BBC who are verified and posting from the field
+
+RULES FOR SOCIAL MEDIA CITATIONS:
+1. Social media posts are ONLY valid sources for BREAKING mode topics — never for current, recent, or general.
+2. Always cross-reference: a social media post alone is not sufficient. It must be corroborated by at least one wire service report or official government statement within 24 hours.
+3. Cite the account name, platform, date/time, and exact quote or paraphrase.
+4. Flag any social media-only claim as "social_media_unconfirmed" in your citation block until wire service confirmation is found.
+5. Do NOT cite unofficial accounts, anonymous accounts, or unverified sources regardless of follower count.

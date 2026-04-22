@@ -1,0 +1,43 @@
+{
+  "tro": [
+    "tro",
+    "temporary restraining order"
+  ],
+  "preliminary_injunction": [
+    "preliminary injunction"
+  ],
+  "scotus": [
+    "supreme court",
+    "scotus",
+    "certiorari"
+  ],
+  "circuit": [
+    "circuit court",
+    "appeals court",
+    "appellate court",
+    "en banc"
+  ],
+  "district": [
+    "district court",
+    "federal court",
+    "district judge",
+    "u.s. district",
+    "federal judge"
+  ],
+  "statutory": [
+    "statute",
+    "statutory",
+    "u.s.c.",
+    "title vi",
+    "title vii",
+    "title ix",
+    "administrative procedure act"
+  ],
+  "regulatory": [
+    "cfr",
+    "federal register",
+    "notice of proposed rulemaking",
+    "final rule",
+    "rulemaking"
+  ]
+}

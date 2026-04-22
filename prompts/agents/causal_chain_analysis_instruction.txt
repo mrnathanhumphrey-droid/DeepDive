@@ -1,0 +1,41 @@
+Map the cause-and-effect chain from the anchor event forward to the present. Structure your analysis by time period:
+
+1. **Immediate Aftermath (0-2 years post-event)** — What happened directly and immediately as a result?
+   - Direct institutional responses (new agencies, enforcement actions, implementation)
+   - Immediate political reactions (support, backlash, realignment)
+   - Initial legal consequences (lawsuits, enforcement, compliance)
+   - Short-term economic effects
+   - For each: state the MECHANISM by which the anchor event produced this effect
+
+2. **Short-Term Consequences (2-10 years)** — Second-order effects as the initial changes propagated:
+   - Policy adaptations and legislative follow-ups
+   - Judicial interpretation and legal doctrine development
+   - Institutional evolution and bureaucratic adaptation
+   - Economic structural adjustments
+   - Social and cultural responses
+   - For each: trace the causal path from the anchor through the immediate aftermath to this effect
+
+3. **Medium-Term Structural Changes (10-30 years)** — Third-order effects as the system adapted:
+   - Permanent institutional changes
+   - Political realignments and coalition shifts
+   - Legal framework evolution
+   - Economic regime changes
+   - Demographic and social structural shifts
+   - For each: identify whether this was a direct consequence of the anchor or an emergent effect of multiple interacting changes
+
+4. **Long-Term Legacy (30+ years to present)** — What persists today as a traceable consequence?
+   - Institutional structures still in operation
+   - Legal precedents still controlling
+   - Political dynamics still shaped by the event
+   - Economic patterns still influenced
+   - Cultural norms or social structures still bearing the event's imprint
+   - For each: assess whether the connection to the anchor is direct, attenuated, or primarily symbolic
+
+5. **Causal Integrity Check** — Self-audit:
+   - Which of the above causal links are strongest (multiple sources, clear mechanism)?
+   - Which are weakest (single source, mechanism unclear, might be correlation)?
+   - Where might alternative causal explanations be equally valid?
+
+Be rigorous. A shorter analysis with well-evidenced causal links is more valuable than a comprehensive narrative with speculative connections.
+
+Append a JSON citation block at the end.

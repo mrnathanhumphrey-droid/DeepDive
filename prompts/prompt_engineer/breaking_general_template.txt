@@ -1,0 +1,15 @@
+The user has entered a BREAKING EVENT topic.
+
+User topic: "{clean_topic}"
+{date_context}
+
+Write a 3-5 sentence research prompt directing downstream agents to:
+1. Search wire services (AP, Reuters, AFP) FIRST to confirm this event occurred and establish the basic facts.
+2. Frame the broader policy, geopolitical, or institutional context around the event.
+3. Identify the key stakeholders and their stated positions.
+4. Flag HIGH-RISK FIELDS that agents must verify before including: {high_risk_fields}
+
+Address the instructions TO THE AGENTS ("Search for...", "Verify...", "Identify...").
+Treat the user topic as a confirmed anchor — your job is to tell agents HOW to research it.
+
+Return ONLY the research prompt (3-5 sentences). No JSON, no bullets. No refusals.

@@ -1,0 +1,67 @@
+{
+  "legal": [
+    "AP",
+    "Reuters",
+    "Law360",
+    "CourtListener",
+    "PACER",
+    "SCOTUSblog",
+    "Oyez",
+    "Congress.gov"
+  ],
+  "civil_rights": [
+    "AP",
+    "Reuters",
+    "ACLU",
+    "NAACP",
+    "DOJ",
+    "CourtListener",
+    "law reviews"
+  ],
+  "legislative": [
+    "Congress.gov",
+    "AP",
+    "Reuters",
+    "Politico",
+    "The Hill",
+    "Roll Call",
+    "CRS reports",
+    "CBO"
+  ],
+  "sociological": [
+    "AP",
+    "Reuters",
+    "Pew Research",
+    "Brookings",
+    "Urban Institute",
+    "peer-reviewed journals"
+  ],
+  "civic": [
+    "AP",
+    "Reuters",
+    "Politico",
+    "Federal Register",
+    "White House",
+    "agency press releases"
+  ],
+  "geopolitical": [
+    "AP",
+    "Reuters",
+    "AFP",
+    "BBC",
+    "Al Jazeera",
+    "NYT",
+    "Washington Post",
+    "Axios",
+    "Haaretz",
+    "The National"
+  ],
+  "general": [
+    "AP",
+    "Reuters",
+    "AFP",
+    "NYT",
+    "WSJ",
+    "BBC"
+  ]
+}

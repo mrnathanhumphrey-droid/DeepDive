@@ -1,0 +1,32 @@
+{
+    "legal": {
+        "subdomains": ["landmark_ruling", "constitutional_amendment", "statutory_evolution", "doctrinal_shift", "judicial_era"],
+        "high_risk_fields": ["case_citation", "vote_count", "justice_joins", "holding_vs_dicta", "subsequent_treatment"],
+        "source_priority": ["original_opinion_text", "scholarly_case_analysis", "legal_treatises", "law_review_articles"]
+    },
+    "civil_rights": {
+        "subdomains": ["movement_era", "legislative_achievement", "judicial_protection", "enforcement_evolution", "backlash_retrenchment"],
+        "high_risk_fields": ["event_dates", "participant_names", "casualty_figures", "legislative_vote_counts", "court_holdings"],
+        "source_priority": ["primary_accounts", "movement_archives", "congressional_record", "scholarly_histories"]
+    },
+    "legislative": {
+        "subdomains": ["landmark_legislation", "policy_regime_change", "regulatory_framework", "amendment_history", "sunset_reauthorization"],
+        "high_risk_fields": ["bill_numbers", "vote_tallies", "sponsor_names", "enactment_dates", "amendment_sequences"],
+        "source_priority": ["congressional_record", "legislative_history", "crs_reports", "policy_retrospectives"]
+    },
+    "geopolitical": {
+        "subdomains": ["war_conflict", "treaty_agreement", "alliance_formation", "territorial_change", "regime_change", "decolonization"],
+        "high_risk_fields": ["casualty_figures", "territorial_boundaries", "treaty_signatories", "chronological_sequence", "attribution_of_cause"],
+        "source_priority": ["diplomatic_archives", "treaty_texts", "un_records", "scholarly_histories", "regional_primary_sources"]
+    },
+    "economic": {
+        "subdomains": ["financial_crisis", "policy_regime", "trade_agreement", "monetary_shift", "market_event"],
+        "high_risk_fields": ["economic_figures", "date_sequences", "causal_attribution", "policy_mechanism", "magnitude_of_effect"],
+        "source_priority": ["fed_archives", "bls_historical", "bea_historical", "nber_working_papers", "economic_histories"]
+    },
+    "sociological": {
+        "subdomains": ["social_movement", "demographic_shift", "cultural_transformation", "institutional_change", "technological_disruption"],
+        "high_risk_fields": ["demographic_figures", "movement_chronology", "attribution_of_cause", "scope_of_impact"],
+        "source_priority": ["census_historical", "peer_reviewed_sociology", "primary_accounts", "longitudinal_studies"]
+    }
+}

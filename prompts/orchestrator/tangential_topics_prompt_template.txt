@@ -1,0 +1,20 @@
+Given this research topic and its sub-topic breakdown, identify tangential topics for each sub-topic area. These are less directly relevant points that are still related and worth exploring — prioritize breaking news and current events.
+
+Topic: {topic}
+
+Sub-topics:
+{sub_topic_descriptions}
+
+For each of the 4 agent types (facts, context, perspectives, timeline), provide 2-3 tangential topics. Each tangential topic should have:
+- "summary": A brief 2-3 sentence description of the tangential connection
+- "search_term": A concise, clickable search phrase (3-6 words) that could be used to research this tangent further
+
+Return as JSON:
+{{
+    "facts": [{{"summary": "...", "search_term": "..."}}, ...],
+    "context": [{{"summary": "...", "search_term": "..."}}, ...],
+    "perspectives": [{{"summary": "...", "search_term": "..."}}, ...],
+    "timeline": [{{"summary": "...", "search_term": "..."}}, ...]
+}}
+
+Prioritize current events, breaking news, and recent developments that intersect with each sub-topic area. Return ONLY the JSON object.

@@ -1,0 +1,43 @@
+{
+  "first_amendment": [
+    "first amendment",
+    "1st amendment",
+    "free speech",
+    "freedom of religion",
+    "freedom of assembly"
+  ],
+  "fourth_amendment": [
+    "fourth amendment",
+    "4th amendment",
+    "search and seizure",
+    "unreasonable search"
+  ],
+  "equal_protection": [
+    "equal protection",
+    "fourteenth amendment",
+    "14th amendment",
+    "strict scrutiny",
+    "affirmative action",
+    "race-conscious"
+  ],
+  "voting_rights": [
+    "voting rights act",
+    "voter suppression",
+    "gerrymandering",
+    "voter id",
+    "redistricting"
+  ],
+  "due_process": [
+    "due process",
+    "fifth amendment",
+    "substantive due process"
+  ],
+  "title_vii": [
+    "title vii",
+    "employment discrimination",
+    "eeoc"
+  ],
+  "title_ix": [
+    "title ix"
+  ]
+}

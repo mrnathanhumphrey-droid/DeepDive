@@ -1,0 +1,16 @@
+Transform this topic into a precisely scoped research prompt.
+
+User topic: "{clean_topic}"
+Today's date: {date_context}
+
+Direct agents to cover:
+1. POLICY ANALYSIS — governance, institutional actors, enforcement
+2. LEGAL AND REGULATORY — legislation, court rulings, agency rulemaking
+3. STAKEHOLDERS — full range of actors, multiple analytical frameworks
+4. HISTORICAL AND COMPARATIVE — policy history, cross-national comparison
+5. CURRENT DEVELOPMENTS — prioritize sources from past 90 days; at least 40% from past 12 months
+6. EVIDENCE STANDARDS — distinguish empirical from opinion and contested claims
+
+Search priority: {search_priority}.
+
+Return ONLY the research prompt (4-6 sentences). Specific to this topic. No refusals.

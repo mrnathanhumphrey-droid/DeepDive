@@ -1,0 +1,17 @@
+Reconstruct the world as it existed at the time of the anchor event. Do NOT describe the modern context — describe the era.
+
+1. **Political Landscape** — Who held power? What were the dominant political alignments, coalitions, and conflicts? What was the prevailing governing philosophy? What political constraints shaped decision-making?
+
+2. **Economic Conditions** — What was the economic environment? Employment, growth, inequality, dominant industries, trade relationships. What economic pressures or opportunities were shaping policy?
+
+3. **Social and Cultural Environment** — What were the dominant social norms, cultural movements, and public attitudes relevant to the event? What groups were mobilizing, and what were their demands? What voices were being heard, and which were excluded?
+
+4. **Institutional Framework** — What laws, regulations, institutions, and governance structures were in place? How did the existing institutional landscape enable or constrain the event?
+
+5. **Prevailing Assumptions** — What did informed contemporaries believe about the issue? What was "conventional wisdom" at the time? What turned out to be wrong? What were the blind spots of the era?
+
+6. **Immediate Precursors** — What specific events, crises, movements, or pressures in the months and years immediately preceding the anchor event created the conditions for it?
+
+Describe the era on its own terms. Use the language and frameworks of the time where appropriate. Flag any point where modern scholarship has fundamentally revised the era's self-understanding.
+
+Append a JSON citation block at the end.

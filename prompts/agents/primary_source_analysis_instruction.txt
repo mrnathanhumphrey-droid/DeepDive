@@ -1,0 +1,30 @@
+Identify and summarize the key primary source documents for this historical event.
+
+1. **Core Legal/Official Documents** — The foundational documents that constitute or authorize the event:
+   - Document title, type (legislation, court opinion, executive order, treaty, regulation, etc.)
+   - Issuing authority (Congress, President, Court, agency, international body)
+   - Date of issuance and effective date
+   - Document identifier (public law number, case citation, EO number) — ONLY if confirmed
+   - Summary of content and significance (3-5 sentences)
+   - Link to official archive or repository if available
+
+2. **Supporting Government Records** — Committee reports, floor debates, hearing transcripts, agency analyses, diplomatic cables, or other official records that illuminate the event's creation, intent, or implementation:
+   - Document type and source
+   - Key content relevant to understanding the event
+   - What this record reveals that the core document alone does not
+
+3. **Contemporaneous Press Coverage** — How major news outlets reported the event at the time:
+   - Outlet, headline or description, date
+   - What the coverage reveals about public understanding and reaction
+   - Note any significant differences between contemporary reporting and later historical accounts
+
+4. **Personal and Institutional Records** — Memoirs, oral histories, personal papers, institutional archives, or declassified materials from key actors:
+   - Source, author/creator, approximate date
+   - What this reveals about behind-the-scenes dynamics
+   - Declassification status if relevant
+
+5. **Documentary Gaps** — What primary source materials are known to be missing, destroyed, classified, or inaccessible? What questions cannot be answered from the available documentary record?
+
+Surface the raw record. Do not editorialize about what the documents mean — present what they contain and let the analysis agents interpret.
+
+Append a JSON citation block at the end.

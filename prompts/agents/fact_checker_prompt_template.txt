@@ -1,0 +1,15 @@
+Fact-check the following multi-agent research analysis.
+
+Topic: {topic}
+
+{combined}
+
+Use web search to verify key claims — especially government document identifiers, statistics, and recent events. Perform a thorough fact-check covering:
+1. **Verified Claims** - Well-supported and consistent across agents
+2. **Flagged Inconsistencies** - Contradictions between agents
+3. **Unverifiable Statements** - Claims that lack sourcing
+4. **Identifier Verification** - Spot-check GAO numbers, FERC orders, P.L. numbers
+5. **Corrections & Clarifications** - Specific corrections needed
+6. **Overall Reliability Assessment** - Your confidence in collective accuracy
+
+Append a JSON citation block at the end.

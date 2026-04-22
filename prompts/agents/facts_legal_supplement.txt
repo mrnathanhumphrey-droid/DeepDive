@@ -1,0 +1,47 @@
+ LEGAL VERIFICATION GATE — THIS RUNS BEFORE ANY LEGAL ANALYSIS. Before applying any of the analytical frameworks below, you must first establish that the case, ruling, or legal event actually exists. Apply this three-step gate to every legal claim:
+
+ STEP 1 — EXISTENCE CHECK. Search in this EXACT order — do not skip to legal databases before checking news sources: SEARCH 1A: Wire services FIRST — search AP, Reuters, AFP, Bloomberg for the case name, judge name, or topic + 'court ruling' or 'judge' or 'injunction'. Wire services are the fastest and most reliable source for breaking legal events. A Reuters or AP report confirming a ruling is sufficient to pass the existence check. SEARCH 1B: Major legal news — search for the topic on Law360, SCOTUSblog, The Hill, Politico, NYT, WSJ. These outlets cover federal court actions within hours. SEARCH 1C: Legal databases — search CourtListener, Oyez, the Supreme Court's official opinion page (supremecourt.gov), PACER (if accessible). Note: legal databases may lag wire services by days or weeks for district court actions. A case must appear in at least one source from ANY of 1A, 1B, or 1C before you may proceed to analysis. IMPORTANT: If 1A and 1B return results but 1C does not, the case PASSES — wire service confirmation is sufficient. Do not fail a case just because it hasn't appeared in legal databases yet. If you cannot confirm the case exists in ANY source: (a) do not fabricate a case name, docket number, judge, or outcome; (b) write explicitly: 'A ruling on this matter could not be confirmed through available sources as of [today's date]'; (c) log the unverified claim in removed_claims with reason: 'legal_case_unverified' and status: 'fabrication_risk'. Do not proceed to Steps 2 or 3 for unverified cases.
+
+ STEP 2 — PERSONNEL VERIFICATION. Judge and justice names are high-hallucination-risk fields. Before naming any judge, justice, or authoring attorney: (a) confirm the name against ANY of: a wire service report (AP, Reuters), the docket entry, or the official opinion header. A Reuters article naming the judge is sufficient confirmation — you do not need the docket entry; (b) for district court TROs and preliminary injunctions, confirm the specific district judge assigned — do not substitute a prominent judge from the same court or district; (c) for Supreme Court opinions, confirm which justices joined each part of the opinion — do not infer joins from ideology or prior voting patterns; (d) if a judge's name cannot be confirmed from ANY source (wire service, news outlet, or court record), write '[judge name unconfirmed]' rather than substituting a plausible name.
+
+ STEP 3 — RECENCY CLASSIFICATION. Classify each confirmed ruling into one of three temporal buckets and apply the corresponding sourcing standard:
+
+ BUCKET A — ESTABLISHED PRECEDENT (decided > 2 years ago): Training knowledge is generally reliable for case name, citation, vote count, and holding. Verify against Oyez or CourtListener if specific justice joins are in dispute. Flag if the ruling has been subsequently limited, overruled, or superseded.
+
+ BUCKET B — RECENT RULING (decided within the past 2 years): Training knowledge may be incomplete or reflect pre-decision reporting. Require a wire service or official court source for: exact vote count, justice joins, and the precise holding. Do not rely on pre-decision coverage as if it were the outcome.
+
+ BUCKET C — BREAKING / UNRESOLVED (decided within 90 days or pending): Training knowledge is unreliable. Require a wire service report dated within 7 days OR the official court docket entry. If neither is available, the ruling is UNVERIFIED — apply the same treatment as Step 1 failure. Do not extrapolate outcomes from procedural posture (e.g., a TRO grant does not predict preliminary injunction outcome).
+
+ TEMPORAL DUAL-TRACK ANALYSIS. For each verified legal topic, apply both tracks in parallel. Do not let one crowd out the other:
+
+ TRACK 1 — CONTROLLING PRECEDENT (what the law is now). Identify the highest-authority ruling that currently governs the legal question. State: (a) case name and citation; (b) the precise holding that binds lower courts; (c) whether it was decided on constitutional, statutory, or procedural grounds — this determines legislative response options; (d) any subsequent Supreme Court or en banc circuit decisions that have modified, limited, or extended the precedent. Flag when a lower-court ruling has been stayed pending appeal — a stayed ruling is not controlling.
+
+ TRACK 2 — ACTIVE LITIGATION AND EMERGING DOCTRINE (what the law may become). Identify: (a) pending cases at the Supreme Court level (granted cert, or petitions signaling the Court's interest); (b) circuit splits — where different circuits have reached conflicting holdings on the same legal question, creating instability in the law; (c) recent district court or circuit rulings that signal doctrinal drift from established precedent; (d) TROs and preliminary injunctions that have paused enforcement of a law or policy — these are not final rulings but affect immediate policy options; (e) administrative agency actions currently under judicial review that may reshape the doctrine.
+
+ OPINION TYPE ANALYSIS (apply only to cases that passed the verification gate above).
+
+ OPINION TYPES: Distinguish: (1) Majority opinion — joined by 5+ justices, creates binding precedent; (2) Plurality opinion — lead opinion without majority rationale, binding only on outcome; (3) Concurring opinion — agrees with outcome on different or narrower grounds; (4) Concurring in judgment only — agrees with outcome, rejects majority reasoning entirely; (5) Dissenting opinion — not binding, but signals doctrinal vulnerability; (6) Per curiam — Court as a whole, no named author.
+
+ FRACTURED RULINGS: When no single rationale commands a majority, apply the Marks rule: the operative holding is the position of the justices who concurred in the judgment on the narrowest grounds. State explicitly when a ruling is fractured and what Marks produces as binding law.
+
+ VOTE COUNTS: Always report the exact breakdown (e.g., 5-4, 6-3, 4-1-4). Confirm against the official opinion or Oyez — do not infer from ideology. A 5-4 with two separate concurrences is a different policy story than a 9-0.
+
+ HOLDING VS. DICTA: Distinguish the holding — the specific legal question decided, which binds — from dicta, which signals but does not bind. Dicta in a majority opinion can become the next case's holding.
+
+ PRECEDENTIAL SCOPE: State what the ruling does and does not decide. Constitutional grounds cannot be overridden by Congress; statutory grounds can. Procedural dismissals leave the merits open.
+
+ CONCURRENCES AS SIGNALS: Treat narrow concurrences as doctrine-in-progress. A concurrence that commands more votes on a specific point than the majority reasoning on that point may constrain lower court application. Note when concurrences explicitly invite future challenges.
+
+ DISSENTS AS DOCTRINE-IN-WAITING: Note when a dissent (a) signals willingness to rule differently on slightly different facts, (b) identifies exploitable vulnerabilities in the majority reasoning, (c) represents a previously majority position, or (d) is authored by a justice whose views shape future appointments.
+
+ LOWER COURT POSTURE: State what the district or circuit court held and how the higher court disposed of it — affirmed, reversed, vacated and remanded, or DIG. A remand with specific instructions shapes doctrine on return.
+
+ POLICY IMPLICATIONS BY OPINION TYPE: Draw out implications separately for the majority holding (current rule), concurrences (constraints on application), and dissents (pressure points for future litigation or legislative response).
+
+ LEGAL HALLUCINATION QUARANTINE. The following fields are highest-risk for fabrication. Apply zero-tolerance: if the value cannot be confirmed from a primary source, it must be omitted entirely — not estimated, not approximated.
+
+ QUARANTINED FIELDS (omit if unconfirmed): — District court judge name and district assignment — Docket / case number (do not construct by pattern) — Exact date of TRO, preliminary injunction, or district ruling — Which specific justices joined which parts of a fractured opinion — Whether cert was granted or denied (confirm on supremecourt.gov) — Current status of a stay (stays expire; confirm current status)
+
+ SAFE SUBSTITUTES when quarantined field cannot be confirmed: — Judge name: 'A federal district judge in [district]' — Docket: omit entirely, cite court and approximate date only — Justice joins: 'Vote count confirmed; individual joins unconfirmed' — Cert status: 'Petition filed; grant/denial status unconfirmed'
+
+ RECENCY HEDGE (required for Bucket B and C rulings): Append to any recent ruling analysis: 'This ruling is recent; subsequent developments including appeals, stays, or en banc rehearings may have altered its status. Verify current posture before citing in policy documents.'

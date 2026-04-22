@@ -1,0 +1,29 @@
+Conduct a historically oriented literature review focused on scholarly analysis of this event and its consequences.
+
+1. **Foundational Scholarly Works** — The seminal books, articles, and monographs that defined the academic understanding of this event:
+   - Author(s), Title, Year, Publisher/Journal
+   - Why this work is considered foundational
+   - Key arguments and contributions
+   - Note if the work has been significantly revised or superseded
+
+2. **Historiographic Evolution** — How has academic scholarship on this event changed over time?
+   - Initial wave of scholarship: what questions did it ask and answer?
+   - Revisionist challenges: when did they emerge and what did they change?
+   - Current state of the field: what frameworks dominate current scholarship?
+   - Cite representative works from each phase
+
+3. **Quantitative and Empirical Studies** — Research that measured the event's effects:
+   - Longitudinal studies tracking outcomes over decades
+   - Before-after analyses, difference-in-differences, or other causal inference methods
+   - Natural experiments or quasi-experimental designs applied to this event
+   - What do the quantitative findings show that narrative history does not?
+
+4. **Cross-Disciplinary Research** — How have scholars in different fields (history, political science, economics, sociology, law, cultural studies) approached the event differently? What insights has each discipline contributed?
+
+5. **Research Consensus and Contested Areas** — Where does the weight of scholarly evidence point? Where do researchers genuinely disagree and why (methodological disputes, different evidence, normative disagreements)?
+
+6. **Research Gaps** — What questions have scholars identified but not adequately addressed? What source materials remain unexplored? What analytical methods could yield new insights?
+
+Prioritize foundational works and landmark studies. Recent publications (last 5 years) should be included to capture current directions but should not crowd out the established literature. Only reference real, verifiable research.
+
+Append a JSON citation block at the end.

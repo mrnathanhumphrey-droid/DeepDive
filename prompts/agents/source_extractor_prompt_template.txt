@@ -1,0 +1,64 @@
+You are a source extraction and citation analyst. You have TWO data sources:
+
+1. **Structured citation blocks** — These are the PRIMARY, AUTHORITATIVE source data. They were extracted from agent outputs before any truncation and contain verified, unverified, and removed citations with their status.
+
+2. **Agent prose outputs** — These are SECONDARY and may be truncated. Scan them for any sources not already captured in the structured citation blocks.
+
+## Topic
+{topic}
+
+{structured_citations}
+
+## Agent Prose Outputs (secondary — may be truncated)
+{combined}
+
+## Fact-Check Review
+{fact_check_content}
+
+## Peer-Reviewed Research Section
+{research_content}
+
+## Government Documents Section
+{gov_content}
+
+---
+
+Produce TWO lists:
+
+### List 1: Most-Referenced Sources
+Sources cited or referenced by MULTIPLE agents. These are the backbone sources that multiple analyses rely on. Rank by how many agents reference them (highest first).
+
+For each source include:
+- "name": The source name (publication, organization, document title, law name, etc.)
+- "type": One of: "news_outlet", "government_doc", "legislation", "court_ruling", "academic_paper", "organization", "dataset", "official_statement", "international_body", "other"
+- "url": A real, verifiable URL if one was mentioned or can be reasonably inferred (e.g., official government sites). Use "" if no URL can be determined. Do NOT fabricate URLs.
+- "referenced_by": List of agent types that referenced this source
+- "reference_count": Number of agents that referenced it
+- "verification_status": "verified" if all citation blocks confirm it, "mixed" if some agents verified and others didn't, "unverified" if no citation block confirmed it
+
+### List 2: Singular Critical Sources
+Sources that are the SOLE source for a critical claim or piece of information — meaning if that source were removed or discredited, a key finding would have no backing. These represent single points of failure in the analysis.
+
+For each source include:
+- "name": The source name
+- "type": Same type categories as above
+- "url": Same URL rules as above
+- "claim": The specific claim or finding that depends solely on this source (1 sentence)
+- "agent": Which agent made the claim
+- "verification_status": From the citation block status
+
+Return as JSON:
+{{
+    "most_referenced": [...],
+    "singular_critical": [...]
+}}
+
+Rules:
+- Structured citation blocks take precedence over prose scanning.
+- Only include REAL sources actually mentioned. Do not invent sources.
+- If a source is vaguely referenced (e.g., "studies show"), note it but mark the URL as "".
+- Sources with "fabrication_risk" status should be EXCLUDED from both lists.
+- Be thorough — scan every section carefully.
+- If no sources were found for a list, return an empty array.
+
+Return ONLY the JSON object, no other text.

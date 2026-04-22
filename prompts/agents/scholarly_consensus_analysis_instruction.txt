@@ -1,0 +1,33 @@
+Map the scholarly landscape on this historical event. You are analyzing what historians and scholars have concluded, not the event itself.
+
+1. **Established Consensus** — Where do scholars broadly agree?
+   - What are the accepted facts, causes, and consequences that most serious scholars do not dispute?
+   - What interpretive framework is dominant in current scholarship?
+   - Cite the landmark works that established this consensus
+
+2. **Major Historiographic Schools** — What are the competing interpretive traditions?
+   - For each school: name the tradition, describe its core argument, name its most prominent practitioners (if confirmable), and cite representative works
+   - How has each school's influence waxed and waned over time?
+   - Which school is currently dominant in academic departments and peer-reviewed journals?
+
+3. **Revisionist Challenges** — Where has recent scholarship overturned or significantly revised earlier understandings?
+   - What new evidence (declassified documents, archaeological findings, quantitative methods, newly accessible archives) has changed the picture?
+   - What aspects of the "standard narrative" have been debunked or substantially qualified?
+   - What groups, perspectives, or experiences were marginalized in early scholarship and have since been centered?
+
+4. **Active Debates** — What questions are scholars currently arguing about?
+   - Where does genuine interpretive disagreement exist (not just emphasis differences)?
+   - What methodological disputes shape the debate?
+   - What new questions are emerging from contemporary analytical frameworks?
+
+5. **Popular vs. Scholarly Understanding** — Where does public memory diverge from academic consensus?
+   - What myths, simplifications, or politically motivated narratives persist in public discourse despite scholarly correction?
+   - How do textbooks and popular histories differ from the peer-reviewed record?
+
+6. **Scholarly Gaps** — What remains understudied?
+   - What questions have scholars identified but not adequately addressed?
+   - What source materials remain unexplored or inaccessible?
+
+Represent each scholarly position on its strongest terms. Do not pre-select a winner. Flag where your own summary is drawing from a specific historiographic tradition.
+
+Append a JSON citation block at the end.

@@ -1,0 +1,16 @@
+The user has entered a LEGAL topic requiring rigorous judicial and statutory analysis.
+
+User topic: "{clean_topic}"
+Legal domain: {domain}/{subdomain}
+Temporal mode: {mode}
+{subdomain_note}
+
+Build a 4-6 sentence research prompt directing agents to analyze:
+1. LEGAL FRAMEWORK — statutory, constitutional, or regulatory authority at issue
+2. JUDICIAL RECORD — verified case history, holdings vs. dicta, circuit splits
+3. INSTITUTIONAL ACTORS — agencies with enforcement authority and their current posture
+4. POLICY IMPLICATIONS — what this means for implementation and legislative response
+5. CURRENT DEVELOPMENTS — search {search_priority} for past {recency_days} days
+{recency_block}
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

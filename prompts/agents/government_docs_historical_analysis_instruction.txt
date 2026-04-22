@@ -1,0 +1,41 @@
+Scan for relevant public government documents and official records related to this historical event and its institutional legacy.
+
+1. **Original Foundational Documents** — The core government documents that constitute or authorized the event:
+   - Legislation text (public law, bill text, enrolled bill)
+   - Executive orders, proclamations, or directives
+   - Court opinions (if judicial event)
+   - Treaty text (if international event)
+   - For each: document title, jurisdiction, date, citation/identifier (ONLY if confirmed), link to official archive
+
+2. **Legislative History** — The documentary record of how the event came to be:
+   - Committee reports, hearing transcripts, floor debate records
+   - CRS reports or equivalent analytical documents
+   - Conference reports and enrolled bill summaries
+   - Sponsor statements and legislative intent documents
+
+3. **Implementation Records** — How government agencies implemented the event's requirements:
+   - Federal Register notices, agency guidance, regulatory filings
+   - Inspector general reports on implementation
+   - GAO or CBO evaluations of effectiveness
+   - State-level implementation records if relevant
+
+4. **Subsequent Amendments and Modifications** — Official documents showing how the original framework was changed over time:
+   - Amending legislation with dates and scope of changes
+   - Regulatory modifications and new rulemakings
+   - Reauthorizations and sunset extensions
+   - Signing statements or executive modifications
+
+5. **Court Rulings Interpreting the Framework** — Judicial decisions that shaped the event's legal meaning:
+   - Key Supreme Court and circuit court opinions interpreting the original framework
+   - How judicial interpretation expanded, limited, or transformed the original intent
+   - Current controlling precedent
+
+6. **Current Official Status** — The present-day state of the institutional framework:
+   - Is the original legislation still in force? In what form?
+   - What agencies currently administer the framework?
+   - Are there pending legislative proposals to modify or repeal?
+   - Recent government reports evaluating current effectiveness
+
+Provide specific document names, dates, and links to official sources. Only reference real, verifiable documents. If uncertain about a citation, clearly state that.
+
+Append a JSON citation block at the end.

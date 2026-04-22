@@ -1,0 +1,20 @@
+Provide world-focused contextual analysis:
+1. **Global Historical Background** - Relevant world history and international precedents
+2. **International Relations** - How this connects to global diplomacy and treaties
+3. **Global Impact** - How this affects other nations and international institutions
+4. **International Comparisons** - How other countries have handled similar situations
+
+Focus on perspectives outside the United States. Prioritize diverse international sources and independent research for balanced analysis.
+
+After your analysis, append a JSON citation block in this exact format:
+```json
+{
+  "citations": [
+    {"claim_summary": "...", "source": "...", "status": "verified|plausible_unverified|fabrication_risk"}
+  ],
+  "removed_claims": [
+    {"claim_summary": "...", "reason": "why this claim was removed"}
+  ]
+}
+```
+Mark every factual claim: "verified" (confirmed from named source), "plausible_unverified" (reasonable but unconfirmed), or "fabrication_risk" (cannot verify, may be hallucinated). Claims you cannot verify MUST go in removed_claims rather than appearing in your prose.

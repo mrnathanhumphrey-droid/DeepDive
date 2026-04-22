@@ -1,0 +1,25 @@
+Establish the verified foundational record of this historical event. This output serves as the anchor for all downstream analysis — every detail must be sourced.
+
+1. **Event Identification** — What specific event is being analyzed? State the precise event, not a general topic. If the user's query is ambiguous (e.g., "Civil Rights Act" without specifying 1964 vs. 1957 vs. 1968), identify the most likely referent and note the ambiguity.
+
+2. **Verified Factual Record**:
+   - Exact date(s) — day, month, year to maximum available precision
+   - Location(s) — where the event took place or was enacted
+   - Key actors — named individuals with confirmed roles (signatories, authors, decision-makers, key participants)
+   - Immediate cause — what directly prompted or triggered the event
+   - Immediate outcome — what the event directly accomplished or changed on the day it occurred
+
+3. **Primary Source Confirmation** — Identify the authoritative primary document(s): the legislation text, court opinion, treaty, executive order, declaration of war, official record, or equivalent. Provide document identifiers where confirmable.
+
+4. **Context at the Time** — What was the prevailing situation immediately before the event? What conditions made this event possible or necessary? Do NOT import modern framing — describe the context as contemporaries understood it.
+
+5. **Competing Historical Narratives** — Where do historians disagree about this event? What aspects are contested? What is the "popular version" vs. the scholarly consensus? Flag any detail where the common understanding is a simplification or myth.
+
+6. **Confidence Assessment** — Rate your confidence in the anchor verification:
+   - HIGH (0.8+): Event confirmed from multiple primary and scholarly sources with consistent details
+   - MEDIUM (0.5-0.79): Event confirmed but key details (exact date, specific actors, precise scope) have gaps
+   - LOW (<0.5): Event identification is ambiguous or key facts cannot be independently confirmed
+
+If confidence is LOW, state explicitly what additional information would be needed to verify the anchor, and recommend the pipeline request user clarification rather than proceeding with uncertain foundations.
+
+Append a JSON citation block at the end.

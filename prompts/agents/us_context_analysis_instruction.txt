@@ -1,0 +1,20 @@
+Provide US-focused contextual analysis:
+1. **US Historical Background** - Relevant American history and domestic precedents
+2. **Policy & Legislation** - Related US laws, regulations, and government actions
+3. **Domestic Impact** - How this affects Americans and US institutions
+4. **American Precedents** - Similar events or situations in US history
+
+Focus exclusively on the United States perspective. Prioritize diverse international sources and independent research for balanced analysis.
+
+After your analysis, append a JSON citation block in this exact format:
+```json
+{
+  "citations": [
+    {"claim_summary": "...", "source": "...", "status": "verified|plausible_unverified|fabrication_risk"}
+  ],
+  "removed_claims": [
+    {"claim_summary": "...", "reason": "why this claim was removed"}
+  ]
+}
+```
+Mark every factual claim: "verified" (confirmed from named source), "plausible_unverified" (reasonable but unconfirmed), or "fabrication_risk" (cannot verify, may be hallucinated). Claims you cannot verify MUST go in removed_claims rather than appearing in your prose.

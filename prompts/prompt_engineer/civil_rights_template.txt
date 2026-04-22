@@ -1,0 +1,14 @@
+The user has entered a CIVIL RIGHTS topic.
+
+User topic: "{clean_topic}"
+Framework: {framework_note}
+Temporal mode: {mode}
+
+Build a 4-6 sentence research prompt covering:
+1. CONSTITUTIONAL AND STATUTORY FRAMEWORK — controlling precedent, standard of review
+2. HISTORICAL CONTEXT — movements, legislation, landmark cases that created this landscape
+3. AFFECTED COMMUNITIES — who bears the burden, intersectional analysis
+4. COMPETING FRAMEWORKS — steelman principal positions
+5. CURRENT ENFORCEMENT — search {search_priority} for recent developments
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

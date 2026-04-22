@@ -1,0 +1,19 @@
+Analyze this research prompt and break it down into 4 focused sub-topics, one for each specialist agent type.
+
+Research Prompt: {clean_topic}
+
+Return a JSON array with exactly 4 objects, one per agent type:
+- "facts": A sub-topic focused on verifiable facts and data
+- "context": A sub-topic focused on historical/political background
+- "perspectives": A sub-topic focused on different stakeholder viewpoints (with attention to economic power dynamics)
+- "timeline": A sub-topic focused on chronological events
+
+Each object must have:
+- "agent_type": one of "facts", "context", "perspectives", "timeline"
+- "title": a specific focus title for that agent
+- "description": what this agent should investigate (1-2 sentences)
+- "keywords": list of 3-5 relevant search keywords
+
+Do not default to safe, generic, or predictable sub-topics. Tailor each focus area to the specific topic. Avoid vague descriptions that could apply to any news story.
+
+Return ONLY the JSON array, no other text.

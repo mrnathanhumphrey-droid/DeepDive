@@ -1,0 +1,28 @@
+Construct a chronological timeline of the anchor event's consequences, annotated with causal relationships. Every entry runs FORWARD from the anchor event.
+
+For each timeline entry provide:
+- **Date** — As specific as possible (YYYY-MM-DD preferred, YYYY-MM acceptable, YYYY only if necessary)
+- **Years post-anchor** — How many years after the anchor event (e.g., "+2 years", "+15 years", "+60 years")
+- **Event description** — What happened (1-2 sentences)
+- **Causal relationship** — One of: DIRECT_CONSEQUENCE, LEGISLATIVE_RESPONSE, JUDICIAL_INTERPRETATION, INSTITUTIONAL_ADAPTATION, POLITICAL_REALIGNMENT, CULTURAL_SHIFT, BACKLASH_REVERSAL, DOWNSTREAM_EVOLUTION, PARALLEL_DEVELOPMENT
+- **Significance** — Why this matters for understanding the anchor event's legacy (1 sentence)
+- **Type** — [Legislative | Regulatory | Judicial | Executive | Political | Social | Economic | Cultural]
+
+Organize the timeline into these periods:
+
+1. **Immediate Aftermath (0-2 years)** — Direct first-order consequences
+2. **Short-Term (2-10 years)** — Implementation, institutional response, early backlash
+3. **Medium-Term (10-30 years)** — Structural changes, doctrinal development, political evolution
+4. **Long-Term (30+ years)** — Enduring legacy, modern consequences, ongoing evolution
+
+Within each period, maintain strict chronological order.
+
+Include at minimum:
+- The anchor event itself (as the first entry, with date and full citation)
+- At least 3 entries per time period (where historically available)
+- Any event where the anchor's effect was REVERSED or significantly MODIFIED
+- The most recent entry should be from the past 12 months if the legacy is still active
+
+Do NOT include events that preceded the anchor event. Do NOT include events that are temporally adjacent but causally unrelated.
+
+Append a JSON citation block at the end.

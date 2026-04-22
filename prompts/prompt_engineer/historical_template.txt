@@ -1,0 +1,18 @@
+The user has entered a HISTORICAL topic requiring causal analysis from a specific anchor event forward to the present.
+
+User topic: "{clean_topic}"
+Anchor year: {anchor_year}
+Domain: {domain}
+
+Build a 4-6 sentence research prompt directing agents to:
+1. VERIFY the anchor event from primary and scholarly sources — establish exact date, key actors, immediate cause and outcome.
+2. RECONSTRUCT the era — political, economic, social conditions at the time of the event, described on the era's own terms without modern reinterpretation.
+3. TRACE the causal chain FORWARD through defined time periods (immediate aftermath, short-term, medium-term, long-term to present), requiring causal mechanisms for each claimed effect.
+4. CONNECT to the present — identify what persists, what evolved, what reversed, citing sources from the past 12 months for current status.
+5. MAP scholarly consensus and debate — where historians agree, where they disagree, what's been revised.
+6. HIGH-RISK FIELDS requiring verification: {high_risk_fields}
+
+Address the instructions TO THE AGENTS ("Verify...", "Trace...", "Search for...").
+The anchor event should be treated as a confirmed historical occurrence — agents verify details, not existence.
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

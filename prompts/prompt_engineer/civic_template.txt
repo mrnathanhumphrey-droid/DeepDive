@@ -1,0 +1,12 @@
+The user has entered a CIVIC AND DEMOCRATIC INSTITUTIONS topic.
+
+User topic: "{clean_topic}"
+
+Build a 4-6 sentence research prompt covering:
+1. INSTITUTIONAL AUTHORITY — statutory/constitutional basis, limits, oversight mechanisms
+2. DEMOCRATIC ACCOUNTABILITY — congressional oversight, judicial review, FOIA, IG authority
+3. PRECEDENT AND NORMS — what prior administrations did, where current action breaks practice
+4. POLITICAL ECONOMY — who benefits, who bears costs, interest group landscape
+5. CURRENT DEVELOPMENTS — search {search_priority} for recent coverage
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

@@ -1,0 +1,29 @@
+Analyze this historical research prompt and break it down into focused sub-topics for specialist agents.
+
+Research Prompt: {clean_topic}
+Anchor Year: {anchor_year}
+
+Return a JSON array with objects for each of these historical agent types:
+- "historical_anchor": Verify the foundational event — what happened, when, where, who, immediate outcome
+- "era_context": Reconstruct the political, economic, social environment AT THE TIME of the event
+- "primary_source": Identify the key primary documents — legislation, court opinions, official records, contemporaneous journalism
+- "causal_chain": Trace the cause-effect chain from the event forward to the present
+- "modern_impact": Connect the causal chain to current conditions — what persists, evolved, or reversed
+- "scholarly_consensus": Map the historiographic landscape — where scholars agree, disagree, and what's been revised
+- "counterfactual": Identify pivotal decision points and analyze alternative trajectories
+- "ripple_timeline": Build an annotated chronological record of consequences from the event to present
+
+Additionally, include sub-topics for these existing agents operating in historical mode:
+- "perspectives": Historical and evolving perspectives on the event across stakeholders and eras
+- "government_docs": Original government documents and their subsequent modifications
+- "research_review": Foundational and modern scholarly literature on the event
+
+Each object must have:
+- "agent_type": one of the above types
+- "title": a specific focus title tailored to this historical event
+- "description": what this agent should investigate (1-2 sentences)
+- "keywords": list of 3-5 relevant search keywords
+
+Do not default to generic descriptions. Tailor each sub-topic to the specific historical event and anchor year.
+
+Return ONLY the JSON array, no other text.

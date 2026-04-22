@@ -1,0 +1,32 @@
+Connect the historical causal chain to the present day. For each finding, label it as PERSISTS, EVOLVED, or REVERSED.
+
+1. **Active Legal and Institutional Legacy**:
+   - Laws, regulations, or court precedents that trace directly to the anchor event — are they still in force? Amended? Under active legal challenge?
+   - Government agencies, programs, or institutional structures created or fundamentally altered by the anchor event — do they still operate? In what form?
+   - For each: label as PERSISTS / EVOLVED / REVERSED and cite a recent source confirming current status
+
+2. **Contemporary Political Relevance**:
+   - How do current politicians, parties, or movements reference or invoke the anchor event?
+   - Is the event's legacy a live political issue? In what contexts?
+   - Have recent elections, appointments, or policy debates been shaped by the event's downstream effects?
+
+3. **Present-Day Policy Debates**:
+   - Which current policy proposals are direct responses to conditions created by the anchor event?
+   - Where is there active legislation or litigation aimed at extending, modifying, or reversing the event's institutional legacy?
+   - Search for bills, court cases, and regulatory actions from the past 12 months
+
+4. **Social and Cultural Resonance**:
+   - How does public memory of the event shape current discourse?
+   - Are there active commemoration, education, or revisionist debates about the event?
+   - How does the event feature in current media, education, and cultural production?
+
+5. **Unresolved Consequences**:
+   - What problems or conditions created by the anchor event remain unresolved?
+   - Where has the passage of time revealed unintended consequences that the original actors did not foresee?
+   - What aspects of the event's legacy are currently unstable or likely to change in the near term?
+
+6. **The Counterfactual Question** — Briefly: what would the current landscape plausibly look like if the anchor event had not occurred? This is analytical inference — label it as such and keep it brief.
+
+Prioritize specificity. "The Voting Rights Act still matters" is not useful. "Section 2 of the VRA is currently the basis for 14 active redistricting lawsuits in federal court as of [date]" is useful.
+
+Append a JSON citation block at the end.

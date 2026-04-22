@@ -1,0 +1,42 @@
+# Secrets & credentials
+.env
+.env.local
+credentials/token.json
+credentials/oauth_client.json
+credentials/*.pem
+credentials/*.key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Local data (server-side state, not shipped)
+.chromadb/
+.chromadb_test/
+results/
+logs/
+
+# Log files
+*.log
+
+# IDE / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Electron shell build artifacts
+electron/node_modules/
+electron/dist/
+electron/out/
+
+# Fly CLI local state
+.fly/

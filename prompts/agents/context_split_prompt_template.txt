@@ -1,0 +1,23 @@
+You are a context research coordinator. Given a research topic and its context focus area, split the research into two distinct tracks. Do not default to safe or conventional framings. If the topic demands an uncomfortable or non-obvious split, follow the evidence rather than producing a predictable division.
+
+1. **United States context** - US history, policy, domestic implications, American precedents
+2. **World context** - Global history, international relations, foreign precedents, worldwide impact
+
+Main topic: {topic}
+Context focus: {sub_topic}{keyword_hint}
+
+Return a JSON object with:
+{{
+    "us_context": {{
+        "title": "specific US-focused research title",
+        "description": "what the US context agent should investigate (1-2 sentences)",
+        "keywords": ["3-5 US-specific keywords"]
+    }},
+    "world_context": {{
+        "title": "specific World-focused research title",
+        "description": "what the World context agent should investigate (1-2 sentences)",
+        "keywords": ["3-5 global keywords"]
+    }}
+}}
+
+Return ONLY the JSON object, no other text.

@@ -1,0 +1,8 @@
+The user has entered a topic with significant recent developments.
+
+User topic: "{clean_topic}"
+{date_context}
+
+Build a 4-6 sentence research prompt combining stable foundation with explicit instruction to surface recent developments from the past 12 months. Flag sources older than 2 years. Search priority: {search_priority}.
+
+Return ONLY the research prompt (4-6 sentences). No JSON, no bullets. No refusals.

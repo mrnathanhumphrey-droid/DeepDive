@@ -1,0 +1,41 @@
+# Fly.io deployment config for DeepDive.
+#
+# This file is committed to git; secrets are NOT here — use `fly secrets set`
+# (see README for the full list of required secrets).
+#
+# Rename `app` below to a unique Fly app name before first deploy:
+#   fly apps create <your-app-name>
+# or let `fly launch` generate one for you.
+
+app = "deepdive-REPLACE_ME"
+primary_region = "iad"   # Virginia — cheap, low-latency for US East. Change if most testers are elsewhere.
+
+[build]
+
+[http_service]
+  internal_port = 8501
+  force_https = true
+  auto_stop_machines = true     # sleeps when idle (saves money); first request wakes it in ~5s
+  auto_start_machines = true
+  min_machines_running = 0      # set to 1 for always-on (no cold start, ~2x cost)
+  processes = ["app"]
+
+# Streamlit is stateful in-session but not cross-session; session affinity helps
+# when multiple testers use the app simultaneously on a single machine.
+[[http_service.checks]]
+  grace_period = "30s"
+  interval = "15s"
+  method = "get"
+  timeout = "5s"
+  path = "/_stcore/health"
+
+# Persistent volume for ChromaDB correction patterns (survives deploys / restarts)
+[[mounts]]
+  source = "chromadb_data"
+  destination = "/app/.chromadb"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"                # 1GB comfortable for 4-parallel-agent bursts; drop to 512mb if budget-tight
+  cpus = 1
+  cpu_kind = "shared"

@@ -1,0 +1,31 @@
+.git/
+.gitignore
+.env
+.env.local
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Local-only state that shouldn't bloat the image
+.chromadb/
+.chromadb_test/
+results/
+logs/
+*.log
+
+# Electron shell isn't needed in the server image
+electron/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Deploy artifacts
+.fly/
+Dockerfile.*~

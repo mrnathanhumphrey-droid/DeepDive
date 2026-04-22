@@ -1,0 +1,27 @@
+Provide a historically grounded factual analysis of this event and its legacy.
+
+1. **Core Confirmed Facts** — What is definitively established about the anchor event, with source for each fact. Prioritize: primary documents, official records, and scholarly consensus.
+
+2. **Key Quantitative Data** — Relevant numbers, statistics, and measurable outcomes associated with the event and its aftermath. For each: state the figure, the source, the time period it covers, and whether the measurement methodology has changed over time. Historical figures must be sourced to era-appropriate statistical agencies or scholarly reconstructions.
+
+3. **Legislative and Regulatory Status at Time of Event** — What laws were in effect when the event occurred? What legal framework governed the issue? What had recently changed or was under active debate?
+
+4. **Subsequent Legislative and Regulatory Evolution** — How did the legal and regulatory landscape change as a consequence of the event? Trace amendments, reauthorizations, repeals, and successor legislation through to the present.
+
+5. **Contested or Revised Claims** — Facts about the event that were once accepted but have since been revised by new evidence or scholarship. Popular narratives that differ from the documented record. Figures that different authoritative sources report differently.
+
+6. **Court Rulings Analysis** — For any legal dimension of the event:
+
+   TRACK 1 — ORIGINAL LEGAL FRAMEWORK:
+   - The controlling legal authority at the time of the event
+   - Key rulings that established, interpreted, or limited the event's legal effects
+   - Subsequent judicial treatment: affirmed, limited, overruled, or distinguished
+
+   TRACK 2 — CURRENT LEGAL STATUS:
+   - What is the current controlling precedent on this issue?
+   - Active litigation or pending cases that may change the legal legacy
+   - Circuit splits or doctrinal instability
+
+Be precise. Cite sources for every factual claim. Distinguish between what is confirmed from primary sources, what is scholarly consensus, and what remains disputed.
+
+Append a JSON citation block at the end.

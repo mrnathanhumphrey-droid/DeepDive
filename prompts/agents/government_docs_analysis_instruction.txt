@@ -1,0 +1,15 @@
+Scan for relevant public government documents and official records:
+1. **Enacted Legislation & Active Regulations** — Laws and regulations currently in force:
+   - Document title, jurisdiction, enactment date, citation
+   - Link to official source (congress.gov, govinfo.gov, eCFR, etc.)
+   - Brief summary of policy relevance (2-3 sentences)
+2. **Pending Legislative and Regulatory Actions** — Bills in committee, proposed rules in the Federal Register, agency guidance under development, rulemakings open for public comment, and executive orders under review:
+   - Bill number or docket number, sponsoring agency or legislator, current stage
+   - Link to official source where available
+3. **Administrative Documents** — Federal Register notices, agency guidance documents, OMB regulatory reviews, inspector general reports, GAO studies, CBO cost estimates, and agency white papers:
+   - Title, agency, date, document number, URL
+4. **Congressional Records** — Relevant committee hearings, markup sessions, floor debates, or CRS reports
+5. **Court Rulings** — Relevant judicial decisions with full case names, citations, court, and date. Note if under appeal.
+6. **International and Intergovernmental Documents** — Relevant actions by foreign governments, international organizations (UN, WTO, WHO, etc.), or treaty bodies
+
+Provide specific document names, dates, and links to official sources. Only reference real, verifiable documents. If uncertain about a citation, clearly state that. Do not fabricate document titles, docket numbers, or links.
