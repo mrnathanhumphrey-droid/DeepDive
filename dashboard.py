@@ -585,6 +585,39 @@ def render_input():
         '</div>',
         unsafe_allow_html=True,
     )
+
+    st.markdown(
+        "<p style='text-align:center;max-width:680px;margin:0 auto 0.5rem;"
+        "font-size:0.95rem;opacity:0.85;'>"
+        "DeepDive isn't a search engine. It's a report generator. "
+        "Don't search terms — search how an event, past or present, shapes the world today."
+        "</p>",
+        unsafe_allow_html=True,
+    )
+
+    with st.expander("How this works (and what to expect) — read first"):
+        st.markdown(
+            "**This is a beta.** You're helping me test whether multi-agent "
+            "research produces genuinely better policy/history briefs than a "
+            "single-model tool like ChatGPT or Perplexity.\n\n"
+            "**What to try:**\n"
+            "- **Breaking news**: paste a headline or article URL. Takes ~3–5 min.\n"
+            "- **Historical deep-dive**: ask about a landmark event or legal case "
+            "  (\"legacy of the Voting Rights Act\", \"how did Dobbs change state law\"). Takes ~6–10 min.\n"
+            "- **Policy topic**: state a question like \"how does the CHIPS Act work\" "
+            "  or \"federal disaster fund structure\". Takes ~4–6 min.\n\n"
+            "**What to watch for:**\n"
+            "- Does the brief actually engage with the specifics, or does it feel generic?\n"
+            "- Are the citations real and relevant, or made up?\n"
+            "- For historical topics: does it avoid projecting modern framing onto the past?\n"
+            "- Does the fact-checker catch anything interesting?\n\n"
+            "**Ground rules:**\n"
+            "- Your login stays active for a month. No need to keep signing in.\n"
+            "- Runs are logged on my side so I can debug what you hit. Nothing personal.\n"
+            "- If it breaks, hallucinates, or produces something weird — that's the "
+            "whole point. Text me the topic + what surprised you."
+        )
+
     col1, col2 = st.columns([4, 1])
     with col1:
         topic = st.text_input(
