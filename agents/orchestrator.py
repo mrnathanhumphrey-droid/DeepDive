@@ -839,12 +839,20 @@ class Orchestrator:
         if context_result:
             all_results.append(context_result)
 
-        # Conditional economics pipeline
+        # Conditional economics pipeline. Inject the anchor_block (verified
+        # news_fetch content) the same way we do for FACTS/PERSPECTIVES/TIMELINE
+        # — otherwise the economics agents try to verify the event independently,
+        # have no web_search tool, and return "can't confirm the premise" bails
+        # even when upstream already confirmed it.
         economics_active = self._detect_economics(topic, sub_topics)
         economics_results = {}
         if economics_active:
             economics_results = self._run_economics_pipeline(
-                topic, sub_topics, progress_callback
+                topic, sub_topics, progress_callback,
+                corrective_guidance={
+                    "economics_data": anchor_block,
+                    "economics_policy": anchor_block,
+                } if anchor_block else None,
             )
 
         # Fact-check
@@ -1101,14 +1109,18 @@ class Orchestrator:
             topic, all_results, fact_check_result, source_data,
             anchor_result, temporal_note)
 
-        # Economics pipeline (conditional, same as standard)
+        # Economics pipeline (conditional, same as standard). Inject the
+        # verified historical anchor_block into the topic so economics agents
+        # don't try to verify the anchor event independently (they have no
+        # web_search tool) and bail with "can't confirm the premise."
         economics_active = self._detect_economics(topic)
         economics_results = {}
         if economics_active:
+            econ_topic = topic + anchor_block if anchor_block else topic
             econ_data = self.economics_data_agent.analyze(
-                topic, "Economic data analysis", mode=mode, anchor_year=anchor_year)
+                econ_topic, "Economic data analysis", mode=mode, anchor_year=anchor_year)
             econ_policy = self.economics_policy_agent.analyze(
-                topic, "Economic policy analysis", mode=mode, anchor_year=anchor_year)
+                econ_topic, "Economic policy analysis", mode=mode, anchor_year=anchor_year)
             economics_results = {"data": econ_data, "policy": econ_policy}
             all_results.extend([econ_data, econ_policy])
 
