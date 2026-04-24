@@ -43,14 +43,38 @@ jobs:
           echo "date=$DATE" >> $GITHUB_OUTPUT
           echo "snapshot_dir=archives/$DATE" >> $GITHUB_OUTPUT
 
+      - name: Wake Fly VM (scale-to-zero cold start)
+        run: |
+          # The app sleeps when idle. Hitting the public endpoint forces it
+          # to wake — SSH can't reach a sleeping VM. Retry up to 60s because
+          # first request on a cold machine can take 10-30s to serve.
+          echo "Waking Fly VM..."
+          for i in $(seq 1 12); do
+            if curl -sf --max-time 15 https://deepdive.fly.dev/_stcore/health > /dev/null 2>&1; then
+              echo "VM awake after attempt $i"
+              break
+            fi
+            echo "  attempt $i: not yet ready, waiting 5s..."
+            sleep 5
+          done
+          # Extra settle time so SSH daemon is responsive
+          sleep 10
+
+      - name: Ensure remote state files exist
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: |
+          # Idempotent setup — creates missing files/dirs so tar can't fail
+          # on a fresh volume with no tester activity yet.
+          flyctl ssh console -a deepdive -C \
+            "sh -c 'cd /app/.chromadb && touch runs.jsonl && mkdir -p results logs'"
+
       - name: Tar remote state on Fly
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
         run: |
-          # tar what exists — runs.jsonl is required; results/ and logs/ may be
-          # empty on a brand-new deploy, so we don't fail if they're missing.
           flyctl ssh console -a deepdive -C \
-            "sh -c 'cd /app/.chromadb && tar -czf /tmp/archive.tar.gz runs.jsonl \$( [ -d results ] && echo results ) \$( [ -d logs ] && echo logs ) 2>/dev/null || tar -czf /tmp/archive.tar.gz runs.jsonl'"
+            "sh -c 'cd /app/.chromadb && tar -czf /tmp/archive.tar.gz runs.jsonl results logs'"
 
       - name: Fetch the tar locally
         env:
