@@ -1,0 +1,112 @@
+# Weekly pull of tester run data from the Fly.io volume into a separate
+# `archives` branch. Runs in GitHub Actions — your machine stays off.
+#
+# Triggers:
+#   - Sundays at 09:00 UTC (cron)
+#   - Manual run via GitHub UI → Actions → "Weekly Archive" → Run workflow
+#
+# Output:
+#   Commits a snapshot to the `archives` branch under archives/<YYYY-MM-DD>/
+#   containing runs.jsonl, results/, logs/. Pull locally with:
+#       git fetch origin archives
+#       git checkout archives -- archives/2026-04-27/
+#
+# Requires secret:
+#   FLY_API_TOKEN (already configured by flyctl launch for deploy)
+
+name: Weekly Archive
+
+on:
+  schedule:
+    - cron: "0 9 * * 0"   # Sundays 09:00 UTC
+  workflow_dispatch:       # Manual trigger from GitHub UI
+
+permissions:
+  contents: write           # needed to push to the archives branch
+
+jobs:
+  archive:
+    name: Pull tester run data from Fly
+    runs-on: ubuntu-latest
+    concurrency: archive-pull   # only one pull at a time
+    steps:
+      - name: Checkout main (for script context + commit identity)
+        uses: actions/checkout@v4
+
+      - name: Install flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Compute snapshot date
+        id: datestamp
+        run: |
+          DATE=$(date -u +"%Y-%m-%d")
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "snapshot_dir=archives/$DATE" >> $GITHUB_OUTPUT
+
+      - name: Tar remote state on Fly
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: |
+          # tar what exists — runs.jsonl is required; results/ and logs/ may be
+          # empty on a brand-new deploy, so we don't fail if they're missing.
+          flyctl ssh console -a deepdive -C \
+            "sh -c 'cd /app/.chromadb && tar -czf /tmp/archive.tar.gz runs.jsonl \$( [ -d results ] && echo results ) \$( [ -d logs ] && echo logs ) 2>/dev/null || tar -czf /tmp/archive.tar.gz runs.jsonl'"
+
+      - name: Fetch the tar locally
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: |
+          mkdir -p "${{ steps.datestamp.outputs.snapshot_dir }}"
+          flyctl ssh sftp get /tmp/archive.tar.gz archive.tar.gz -a deepdive
+
+      - name: Extract into snapshot folder
+        run: |
+          tar -xzf archive.tar.gz -C "${{ steps.datestamp.outputs.snapshot_dir }}"
+          rm archive.tar.gz
+          # Small human-readable pointer so the snapshot is easy to grok
+          RUNS=$(wc -l < "${{ steps.datestamp.outputs.snapshot_dir }}/runs.jsonl" 2>/dev/null || echo 0)
+          cat > "${{ steps.datestamp.outputs.snapshot_dir }}/_snapshot_info.txt" <<EOF
+          DeepDive weekly snapshot
+          Pulled: $(date -u)
+          Runs logged (cumulative): $RUNS
+          EOF
+
+      - name: Cleanup remote tar
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        continue-on-error: true
+        run: |
+          flyctl ssh console -a deepdive -C "rm -f /tmp/archive.tar.gz"
+
+      - name: Commit snapshot to `archives` branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Switch to archives branch (create if missing)
+          git fetch origin archives:archives 2>/dev/null || git checkout --orphan archives
+          git checkout archives 2>/dev/null || git checkout -b archives
+
+          # Keep only the archives/ tree on this branch — main's code lives on main
+          # Move the new snapshot out of the way, clean everything else, restore it.
+          mv "${{ steps.datestamp.outputs.snapshot_dir }}" /tmp/new_snapshot
+          git rm -rf . 2>/dev/null || true
+          mkdir -p archives
+          mv /tmp/new_snapshot "${{ steps.datestamp.outputs.snapshot_dir }}"
+
+          # Restore any prior snapshots from the archives branch
+          git checkout archives -- archives/ 2>/dev/null || true
+
+          git add archives/
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Weekly archive — ${{ steps.datestamp.outputs.date }}"
+          git push origin archives
+
+      - name: Upload snapshot as workflow artifact (90-day retention)
+        uses: actions/upload-artifact@v4
+        with:
+          name: deepdive-archive-${{ steps.datestamp.outputs.date }}
+          path: ${{ steps.datestamp.outputs.snapshot_dir }}
+          retention-days: 90
