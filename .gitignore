@@ -40,3 +40,8 @@ electron/out/
 
 # Fly CLI local state
 .fly/
+
+# Scratch git worktree for offline approval workflow (auto-created by
+# scripts/approve_run.py). Always cleaned up post-run, but guard against
+# accidental commits if a prior session crashed.
+.approvals_worktree/
