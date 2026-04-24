@@ -8,6 +8,13 @@ primary_region = 'iad'
 
 [build]
 
+[env]
+  # Persistent state (runs.jsonl, results/, logs/) is written here so it
+  # survives deploys and machine restarts. The volume mount below provides
+  # the durable filesystem; this env var tells dashboard.py + headline_smoke
+  # where to write. Locally (no env var set), they write to project root.
+  PERSIST_DIR = '/app/.chromadb'
+
 [[mounts]]
   source = 'chromadb_data'
   destination = '/app/.chromadb'

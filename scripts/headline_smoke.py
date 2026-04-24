@@ -1,10 +1,14 @@
 """Drive Orchestrator.run_analysis() directly — no Streamlit.
 
 Usage: python scripts/headline_smoke.py "<headline>"
-Logs every agent callback. Writes final state JSON to results/<slug>_smoke.json.
+
+Writes results to results/<YYYY-MM-DD>/<slug>_smoke.{json,md}
+and mirrors the console log to logs/<YYYY-MM-DD>/<slug>_smoke.log.
 """
 import json
 import logging
+import os
+import re
 import sys
 import time
 from datetime import datetime
@@ -13,15 +17,43 @@ from pathlib import Path
 # Ensure project root is importable
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(name)s | %(message)s",
-    datefmt="%H:%M:%S",
-)
+# Honor PERSIST_DIR env var so runs against production use the same path
+# convention as the hosted dashboard. Locally defaults to project root.
+_PERSIST_DIR = Path(os.getenv("PERSIST_DIR", Path(__file__).resolve().parent.parent))
+
+_LOG_FORMAT = "%(asctime)s %(levelname)s %(name)s | %(message)s"
+_LOG_DATEFMT = "%H:%M:%S"
+
+# Console handler (stdout) set up immediately so early errors are visible.
+# The file handler is added once we know the headline/date for path naming.
+logging.basicConfig(level=logging.INFO, format=_LOG_FORMAT, datefmt=_LOG_DATEFMT)
 log = logging.getLogger("smoke")
 
 from agents.orchestrator import Orchestrator
 from models.schemas import AgentType
+
+
+def _slugify(text: str, max_len: int = 60) -> str:
+    slug = re.sub(r"[^a-zA-Z0-9]+", "_", text.lower()).strip("_")
+    return slug[:max_len] or "untitled"
+
+
+def _attach_file_handler(headline: str, t0: float) -> Path:
+    """Mirror this run's console output to logs/<date>/<slug>_smoke.log.
+    Must be called after logging.basicConfig() so the root logger exists.
+    Returns the log file path so the caller can log it as context."""
+    run_date = datetime.fromtimestamp(t0).strftime("%Y-%m-%d")
+    slug = _slugify(headline)
+    log_path = _PERSIST_DIR / "logs" / run_date / f"{slug}_smoke.log"
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler.setFormatter(logging.Formatter(_LOG_FORMAT, datefmt=_LOG_DATEFMT))
+    handler.setLevel(logging.INFO)
+    # Attach to ROOT logger so every module's logging.getLogger(__name__)
+    # output lands in the file — not just the "smoke" logger.
+    logging.getLogger().addHandler(handler)
+    return log_path
 
 
 def main():
@@ -29,13 +61,16 @@ def main():
         print("Usage: python scripts/headline_smoke.py '<headline>'")
         sys.exit(1)
     headline = sys.argv[1]
+    t0 = time.time()
+
+    log_path = _attach_file_handler(headline, t0)
 
     log.info("=" * 72)
     log.info("SMOKE TEST: %s", headline)
+    log.info("Log mirrored to %s", log_path)
     log.info("=" * 72)
 
     orch = Orchestrator()
-    t0 = time.time()
 
     def on_progress(agent_type, result):
         elapsed = int(time.time() - t0)
@@ -83,8 +118,12 @@ def main():
     slug = (
         "".join(c if c.isalnum() else "_" for c in headline.lower())[:60].strip("_")
     )
-    out = Path(__file__).resolve().parent.parent / "results" / f"{slug}_smoke.json"
-    out.parent.mkdir(exist_ok=True)
+    # Results organized by date (YYYY-MM-DD/) so the folder doesn't accumulate
+    # into a flat mess over time. Use run-start date, not save date, so a run
+    # that crosses midnight stays grouped under when it started.
+    run_date = datetime.fromtimestamp(t0).strftime("%Y-%m-%d")
+    out = _PERSIST_DIR / "results" / run_date / f"{slug}_smoke.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
 
     def _safe(obj):
         try:

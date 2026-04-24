@@ -2,9 +2,13 @@ import os
 import re
 import io
 import json
+import time
+import logging
+import traceback
 import glob as globlib
 from dataclasses import asdict
 from datetime import datetime
+from pathlib import Path
 import streamlit as st
 from docx import Document
 from docx.shared import Pt, Inches
@@ -13,8 +17,95 @@ from models.schemas import AgentType
 from vector_store import CorrectionStore
 from google_drive import upload_docx_to_drive, is_drive_configured, is_drive_authenticated
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
-LOG_DIR = os.path.join(os.path.dirname(__file__), "results")
+# PERSIST_DIR controls where results/logs/manifest land.
+# Locally: project root (so ./results and ./logs still work for dev).
+# On Fly: set PERSIST_DIR=/app/.chromadb so persistent state survives deploys.
+PERSIST_DIR = os.getenv("PERSIST_DIR", os.path.dirname(__file__))
+RESULTS_DIR = os.path.join(PERSIST_DIR, "results")
+LOG_DIR = os.path.join(PERSIST_DIR, "logs")
+RUNS_MANIFEST = os.path.join(PERSIST_DIR, "runs.jsonl")
+
+_LOG_FORMAT = "%(asctime)s %(levelname)s %(name)s | %(message)s"
+logging.basicConfig(level=logging.INFO, format=_LOG_FORMAT)
+
+
+# ── Per-run persistence helpers ────────────────────────────────────
+
+
+def _slug(text: str, n: int = 60) -> str:
+    return re.sub(r'[^a-z0-9]+', '_', text.lower().strip())[:n].strip('_') or "untitled"
+
+
+def _run_paths(topic: str, t0: float) -> tuple[Path, Path, str]:
+    """Return (run_dir, log_path, run_id) for a run, creating parent dirs.
+
+    Layout matches what we just reorganized: results/<date>/<slug>_<time>/...
+    and logs/<date>/<slug>_<time>.log. One pair per analysis, correlatable
+    via the shared run_id."""
+    ts = datetime.fromtimestamp(t0)
+    date = ts.strftime("%Y-%m-%d")
+    time_str = ts.strftime("%H%M%S")
+    slug = _slug(topic)
+    run_id = f"{date}_{time_str}_{slug[:40]}"
+
+    run_dir = Path(RESULTS_DIR) / date / f"{slug}_{time_str}"
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    log_dir = Path(LOG_DIR) / date
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_path = log_dir / f"{slug}_{time_str}.log"
+
+    return run_dir, log_path, run_id
+
+
+def _open_run_log(log_path: Path) -> logging.Handler:
+    """Attach a FileHandler to the root logger so EVERY module's logging output
+    (orchestrator, agents, services) is mirrored to the per-run log file."""
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler.setFormatter(logging.Formatter(_LOG_FORMAT))
+    handler.setLevel(logging.INFO)
+    logging.getLogger().addHandler(handler)
+    return handler
+
+
+def _close_run_log(handler: logging.Handler) -> None:
+    logging.getLogger().removeHandler(handler)
+    handler.close()
+
+
+def _append_run_manifest(record: dict) -> None:
+    """Append one JSON line per run to runs.jsonl (success or failure).
+
+    JSONL is append-only — safe under concurrent Streamlit sessions — and
+    directly ingestable by jq / pandas / LLM aggregators for pattern-finding.
+    """
+    os.makedirs(PERSIST_DIR, exist_ok=True)
+    with open(RUNS_MANIFEST, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, default=str) + "\n")
+
+
+def _derive_manifest_metadata(state: dict) -> dict:
+    """Pull aggregation-friendly fields out of a completed state dict."""
+    out = {}
+    if not isinstance(state, dict):
+        return out
+    # Parse-result derived fields
+    pr = getattr(st.session_state.get("orchestrator"), "last_parse_result", None)
+    if pr:
+        out["mode"] = getattr(pr, "mode", None)
+        out["domain"] = getattr(pr, "domain", None)
+        out["subdomain"] = getattr(pr, "subdomain", None)
+        out["anchor_year"] = getattr(pr, "anchor_year", None)
+        out["is_headline"] = getattr(pr, "is_headline", None)
+        out["is_question"] = getattr(pr, "is_question", None)
+    # State-derived fields
+    out["anchor_event"] = state.get("anchor_event")
+    out["sub_topic_count"] = len(state.get("sub_topics", []) or [])
+    out["agent_result_count"] = len(state.get("agent_results", []) or [])
+    sources = state.get("sources") or {}
+    if isinstance(sources, dict):
+        out["source_count"] = len(sources.get("ranked", []) or []) if sources else 0
+    return out
 
 # Page config
 st.set_page_config(
@@ -1310,51 +1401,103 @@ def build_docx_report(state):
     return buf.getvalue()
 
 
-def save_parse_result_log(raw_topic, parse_result, engineered_topic):
-    """Log ParseResult to disk for QC review. Not displayed in the dashboard."""
-    os.makedirs(RESULTS_DIR, exist_ok=True)
-    slug = re.sub(r'[^a-z0-9]+', '_', raw_topic.lower().strip())[:60].strip('_')
+def save_parse_result_log(raw_topic, parse_result, engineered_topic, run_dir: Path | None = None):
+    """Log ParseResult to disk for QC review. Writes to the per-run directory
+    if one is provided; otherwise falls back to a date-bucketed location.
+    Not displayed in the dashboard."""
     log_entry = {
         "timestamp": datetime.now().isoformat(),
         "raw_topic": raw_topic,
         "parse_result": asdict(parse_result),
         "engineered_topic": engineered_topic,
     }
-    log_path = os.path.join(RESULTS_DIR, f"{slug}_parser_qc.json")
-    with open(log_path, "w", encoding="utf-8") as f:
-        json.dump(log_entry, f, indent=2, default=str)
+    if run_dir is not None:
+        log_path = run_dir / "parser_qc.json"
+    else:
+        # Fallback (shouldn't normally fire) — date-bucketed flat file.
+        date = datetime.now().strftime("%Y-%m-%d")
+        fallback = Path(RESULTS_DIR) / date
+        fallback.mkdir(parents=True, exist_ok=True)
+        slug = _slug(raw_topic)
+        log_path = fallback / f"{slug}_parser_qc.json"
+    log_path.write_text(json.dumps(log_entry, indent=2, default=str), encoding="utf-8")
 
 
-def auto_save_results(state):
-    """Save the latest results to disk so they can be read outside Streamlit."""
-    os.makedirs(RESULTS_DIR, exist_ok=True)
+def auto_save_results(state, run_dir: Path | None = None):
+    """Save the latest results to disk so they can be read outside Streamlit.
+
+    With run_dir: writes synthesis.md + state.json into the per-run folder.
+    Without run_dir: falls back to a date-bucketed flat file (legacy path,
+    used by retry screens or meta-review iterations that don't have a run_dir).
+    """
     topic = state.get("raw_topic", state.get("topic", "unknown"))
-    slug = re.sub(r'[^a-z0-9]+', '_', topic.lower().strip())[:60].strip('_')
-
-    # Save the full markdown report
     report = build_download_report(state)
-    report_path = os.path.join(RESULTS_DIR, f"{slug}.md")
-    with open(report_path, "w", encoding="utf-8") as f:
-        f.write(report)
 
-    # Also save as "latest.md" for easy access
-    latest_path = os.path.join(RESULTS_DIR, "latest.md")
-    with open(latest_path, "w", encoding="utf-8") as f:
-        f.write(report)
+    if run_dir is not None:
+        run_dir.mkdir(parents=True, exist_ok=True)
+        (run_dir / "synthesis.md").write_text(report, encoding="utf-8")
+
+        # Best-effort state JSON dump — tolerate non-serializable bits.
+        try:
+            state_json = json.dumps(state, indent=2, default=str)
+        except Exception as exc:
+            state_json = json.dumps(
+                {"serialization_error": str(exc), "state_keys": list(state.keys())},
+                indent=2,
+            )
+        (run_dir / "state.json").write_text(state_json, encoding="utf-8")
+    else:
+        # Fallback path for re-saves from meta review without run_dir context.
+        date = datetime.now().strftime("%Y-%m-%d")
+        fallback = Path(RESULTS_DIR) / date
+        fallback.mkdir(parents=True, exist_ok=True)
+        slug = _slug(topic)
+        (fallback / f"{slug}.md").write_text(report, encoding="utf-8")
 
 
 # ── Dashboard tabs: Logs and Vector DB ──────────────────────────────
 
 def render_logs_tab():
-    """Display saved analysis log files."""
+    """Display saved analysis log files.
+
+    Walks the date-organized structure: results/<YYYY-MM-DD>/<slug>_<time>/synthesis.md
+    and the legacy flat path for older saves. Newest first."""
     st.subheader("📄 Analysis Logs")
     st.caption("Previously saved analysis reports.")
 
+    # Per-run synthesis files live one level deeper now
+    per_run_mds = globlib.glob(
+        os.path.join(RESULTS_DIR, "*", "*", "synthesis.md")
+    )
+    # Legacy flat-bucketed and pre-reorg top-level .md files
+    date_bucketed_mds = [
+        p for p in globlib.glob(os.path.join(RESULTS_DIR, "*", "*.md"))
+        if os.path.basename(p) != "synthesis.md"
+    ]
+    legacy_flat_mds = globlib.glob(os.path.join(RESULTS_DIR, "*.md"))
+
     log_files = sorted(
-        globlib.glob(os.path.join(RESULTS_DIR, "*.md")),
+        per_run_mds + date_bucketed_mds + legacy_flat_mds,
         key=os.path.getmtime,
         reverse=True,
     )
+
+    # Offer the runs.jsonl manifest for download — the aggregation artifact
+    if os.path.exists(RUNS_MANIFEST):
+        with open(RUNS_MANIFEST, "r", encoding="utf-8") as f:
+            manifest_data = f.read()
+        manifest_lines = manifest_data.count("\n")
+        st.download_button(
+            f"📥 Download runs.jsonl ({manifest_lines} runs logged)",
+            data=manifest_data,
+            file_name="runs.jsonl",
+            mime="application/jsonl",
+        )
+        st.caption(
+            "JSONL manifest of every run (success + failure). Pipe into `jq`, "
+            "pandas, or an LLM aggregator to find patterns across runs."
+        )
+        st.divider()
 
     if not log_files:
         st.info("No analysis logs found. Run an analysis first.")
@@ -1365,9 +1508,14 @@ def render_logs_tab():
         if filename == "latest.md":
             continue
         mod_time = os.path.getmtime(filepath)
-        from datetime import datetime
         mod_str = datetime.fromtimestamp(mod_time).strftime("%Y-%m-%d %H:%M")
-        display_name = filename.replace("_", " ").replace(".md", "").title()
+        # For per-run files, the filename is "synthesis.md" — meaningless.
+        # Derive display name from the run-folder name instead.
+        if filename == "synthesis.md":
+            display_name = os.path.basename(os.path.dirname(filepath)) \
+                .replace("_", " ").title()
+        else:
+            display_name = filename.replace("_", " ").replace(".md", "").title()
 
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
@@ -1576,28 +1724,50 @@ def main():
                 st.rerun()
             orchestrator = st.session_state.orchestrator
 
-            with st.status("Running analysis pipeline...", expanded=True) as status:
-                try:
+            # Per-run persistence setup — every run (success OR failure) gets:
+            #   results/<date>/<slug>_<time>/ ← synthesis + state + parser_qc
+            #   logs/<date>/<slug>_<time>.log ← full per-run log
+            #   runs.jsonl ← one line appended, success or failure
+            t0 = time.time()
+            run_dir, log_path, run_id = _run_paths(topic, t0)
+            log_handler = _open_run_log(log_path)
+            run_logger = logging.getLogger("run")
+            run_logger.info("=" * 72)
+            run_logger.info("RUN %s | topic=%r", run_id, topic)
+            run_logger.info("=" * 72)
+
+            manifest = {
+                "run_id": run_id,
+                "started_at": datetime.fromtimestamp(t0).isoformat(),
+                "topic": topic,
+                "status": "failed",  # default; overwritten on success
+                "error_type": None,
+                "error_message": None,
+                "result_dir": str(run_dir),
+                "log_path": str(log_path),
+            }
+
+            state = None  # ensure defined in except/finally
+            try:
+                with st.status("Running analysis pipeline...", expanded=True) as status:
                     # Step 0: Engineer the prompt
                     st.write("Engineering research prompt from your topic...")
                     engineered_topic = orchestrator.engineer_prompt(topic)
-                    # Log ParseResult for QC (not shown in dashboard)
                     if hasattr(orchestrator, 'last_parse_result'):
-                        save_parse_result_log(topic, orchestrator.last_parse_result, engineered_topic)
+                        save_parse_result_log(
+                            topic, orchestrator.last_parse_result, engineered_topic, run_dir,
+                        )
                     st.write("Research prompt optimized")
                     with st.expander("View engineered prompt", expanded=False):
                         st.markdown(f"**Your input:** {topic}")
                         st.markdown(f"**Engineered prompt:** {engineered_topic}")
 
-                    # Run the full pipeline through the single correct entry point
-                    # This activates: anchor detection, pre-verification news fetch,
-                    # URL prefetching, seed evidence injection, parallel dispatch,
-                    # economics detection, fact-check, source extraction, synthesis
                     def progress_callback(agent_type, result):
                         st.write(f"✓ {agent_type.value.replace('_', ' ').title()} complete")
 
                     state = orchestrator.run_analysis(engineered_topic, progress_callback)
                     state["raw_topic"] = topic
+                    state["run_id"] = run_id
 
                     # Generate tangential topics (separate from main pipeline)
                     st.write("Generating tangential topics...")
@@ -1606,16 +1776,13 @@ def main():
                     )
                     st.write("Tangential topics generated")
 
-                    # Ensure sources key exists for dashboard rendering
                     if "sources" not in state:
                         state["sources"] = None
 
-                    # Step 9: Extract sources
                     st.write("Extracting and ranking sources across all agents...")
                     state["sources"] = orchestrator.extract_sources(state)
                     st.write("Source extraction complete")
 
-                    # Step 10: Meta review
                     st.write("Running meta review...")
                     state = orchestrator.run_meta_review(state, iteration=0)
                     st.write("Meta review complete")
@@ -1623,19 +1790,39 @@ def main():
                     st.session_state.pipeline_state = state
                     st.session_state.phase = "meta_review"
                     st.session_state.correction_round = 0
-                    auto_save_results(state)
+                    auto_save_results(state, run_dir)
+                    manifest["status"] = "success"
+                    manifest.update(_derive_manifest_metadata(state))
                     status.update(label="Analysis complete — review below",
                                   state="complete", expanded=False)
-                except Exception as e:
-                    status.update(label="Analysis failed", state="error")
-                    st.error(f"Error during analysis: {e}")
-                    import traceback
-                    st.code(traceback.format_exc())
-                    if st.button("Start Over"):
-                        st.session_state.phase = "input"
-                        st.session_state.pipeline_state = None
-                        st.rerun()
-                    return
+            except Exception as e:
+                manifest["error_type"] = type(e).__name__
+                manifest["error_message"] = str(e)[:1000]
+                tb = traceback.format_exc()
+                run_logger.error("RUN FAILED: %s\n%s", e, tb)
+                st.error(f"Error during analysis: {e}")
+                st.code(tb)
+                if st.button("Start Over"):
+                    st.session_state.phase = "input"
+                    st.session_state.pipeline_state = None
+                    # Finalize manifest + close log before rerun
+                    manifest["ended_at"] = datetime.utcnow().isoformat()
+                    manifest["elapsed_s"] = int(time.time() - t0)
+                    _append_run_manifest(manifest)
+                    _close_run_log(log_handler)
+                    st.rerun()
+                return
+            finally:
+                # Always record elapsed + append manifest + close log handler,
+                # even when an exception shortcircuits — so every run is counted.
+                if "ended_at" not in manifest:
+                    manifest["ended_at"] = datetime.utcnow().isoformat()
+                    manifest["elapsed_s"] = int(time.time() - t0)
+                    try:
+                        _append_run_manifest(manifest)
+                    except Exception:
+                        run_logger.exception("Failed to append runs.jsonl")
+                    _close_run_log(log_handler)
 
             st.rerun()
 
