@@ -102,6 +102,10 @@ def _derive_manifest_metadata(state: dict) -> dict:
     out["anchor_event"] = state.get("anchor_event")
     out["sub_topic_count"] = len(state.get("sub_topics", []) or [])
     out["agent_result_count"] = len(state.get("agent_results", []) or [])
+    # Whether the conditional economics pipeline activated for this run —
+    # slice on this in runs.jsonl to evaluate whether triggering adds useful
+    # analysis vs. noise, before deciding to tighten the detection gate.
+    out["economics_active"] = bool(state.get("economics_active", False))
     sources = state.get("sources") or {}
     if isinstance(sources, dict):
         out["source_count"] = len(sources.get("ranked", []) or []) if sources else 0
