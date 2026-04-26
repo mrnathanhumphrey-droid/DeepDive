@@ -853,6 +853,9 @@ def render_citation_block(citation_data):
                     or c.get("document_date", "")
                 )
                 st.markdown(f"{icon} **{summary}**")
+                citation_str = c.get("citation", "") if isinstance(c, dict) else ""
+                if citation_str:
+                    st.markdown(f"*{citation_str}*")
                 details = []
                 if source:
                     details.append(f"Source: {source}")
