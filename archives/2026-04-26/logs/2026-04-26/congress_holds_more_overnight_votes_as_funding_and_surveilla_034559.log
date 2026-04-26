@@ -1,0 +1,25 @@
+2026-04-26 03:45:59,889 INFO run | ========================================================================
+2026-04-26 03:45:59,889 INFO run | RUN 2026-04-26_034559_congress_holds_more_overnight_votes_as_f | topic='Congress Holds More Overnight Votes as Funding and Surveillance Fights Drag On'
+2026-04-26 03:45:59,889 INFO run | ========================================================================
+2026-04-26 03:46:06,616 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:46:12,440 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:46:16,745 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:46:21,327 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:47:12,171 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:47:12,190 WARNING agents.orchestrator | [twitter] Agent failed to initialize: TWITTER_BEARER_TOKEN not set in .env
+2026-04-26 03:47:20,144 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:47:32,824 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:47:40,042 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:47:55,323 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:12,593 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:13,924 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:14,585 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:21,093 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:22,775 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:28,265 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:48:54,112 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:49:48,916 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:50:03,589 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:50:40,531 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:50:47,916 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-26 03:51:32,039 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
