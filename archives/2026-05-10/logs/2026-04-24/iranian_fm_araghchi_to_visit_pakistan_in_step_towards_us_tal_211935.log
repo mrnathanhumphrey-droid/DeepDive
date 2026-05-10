@@ -1,0 +1,28 @@
+2026-04-24 21:19:35,659 INFO run | ========================================================================
+2026-04-24 21:19:35,659 INFO run | RUN 2026-04-24_211935_iranian_fm_araghchi_to_visit_pakistan_in | topic='Iranian FM Araghchi to visit Pakistan in step towards US talks resumption'
+2026-04-24 21:19:35,660 INFO run | ========================================================================
+2026-04-24 21:19:36,207 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:19:36,943 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:19:37,483 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:19:41,709 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:20:29,413 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:20:29,449 WARNING agents.orchestrator | [twitter] Agent failed to initialize: TWITTER_BEARER_TOKEN not set in .env
+2026-04-24 21:20:42,132 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:20:56,826 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:21:04,871 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:21:23,836 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:21:34,080 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:21:38,770 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:21:49,602 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:21:51,883 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:22:13,537 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:22:16,321 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:22:32,062 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:23:01,055 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:23:25,418 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:24:34,872 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:24:47,852 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:25:27,848 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:25:36,235 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-04-24 21:25:36,566 INFO httpx | HTTP Request: GET https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz "HTTP/1.1 200 OK"
+2026-04-24 21:26:06,099 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"

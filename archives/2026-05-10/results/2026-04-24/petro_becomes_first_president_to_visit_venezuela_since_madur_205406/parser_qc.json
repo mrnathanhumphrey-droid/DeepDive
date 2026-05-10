@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T20:54:31.853278",
+  "raw_topic": "Petro becomes first president to visit Venezuela since Maduro abduction",
+  "parse_result": {
+    "mode": "breaking",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS April 24, 2026 (2026-04-24). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-17 to 2026-04-24.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "Petro becomes first president to visit Venezuela since Maduro abduction",
+    "matched_breaking": [
+      "llm_classify:breaking"
+    ],
+    "matched_current": [],
+    "matched_domain": []
+  },
+  "engineered_topic": "ANCHOR_EVENT: Petro becomes first president to visit Venezuela since Maduro abduction\nDATE_CONTEXT: TODAY IS April 24, 2026 (2026-04-24). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-17 to 2026-04-24.\nDOMAIN: general\nHIGH_RISK_FIELDS: none\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: **RESEARCH PROMPT FOR DOWNSTREAM AGENTS:**\n\nSearch AP, Reuters, and AFP wire services (2026-04-17 to 2026-04-24) to verify whether Colombian President Petro visited Venezuela and whether this visit followed a \"Maduro abduction\"\u2014confirm both the visit occurrence and the characterization of the preceding event from primary wire coverage before proceeding. Once the basic facts are established, identify the stated positions of key stakeholders (Colombian government, Venezuelan government or opposition, regional bodies like UNASUR or OAS, and U.S. administration) regarding the visit's purpose, legitimacy, and geopolitical significance. Analyze the institutional and diplomatic context: what is the current constitutional/recognized status of Venezuela's government, how do neighboring states' positions differ on this question, and what policy objectives does Petro's visit signal (humanitarian, political recognition, mediation, other)? Flag for verification any specific claims about casualty figures, arrest warrants, sanctions changes, or named military/security officials involved\u2014cross-reference these against multiple wire sources before inclusion in analysis."
+}

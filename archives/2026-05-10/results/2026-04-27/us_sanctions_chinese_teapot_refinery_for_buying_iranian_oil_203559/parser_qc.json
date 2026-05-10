@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-04-27T20:36:16.552781",
+  "raw_topic": "US sanctions Chinese teapot refinery for buying Iranian oil",
+  "parse_result": {
+    "mode": "breaking",
+    "anchor_year": 0,
+    "domain": "geopolitical",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 1,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "sanctions",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [
+      "sanctions_authority",
+      "targeted_entities",
+      "effective_date",
+      "enforcement_mechanism",
+      "exemptions"
+    ],
+    "date_context": "TODAY IS April 27, 2026 (2026-04-27). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-20 to 2026-04-27.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "BBC",
+      "Al Jazeera",
+      "NYT",
+      "Washington Post",
+      "Axios",
+      "Haaretz",
+      "The National"
+    ],
+    "urls": [],
+    "clean_topic": "US sanctions Chinese teapot refinery for buying Iranian oil",
+    "matched_breaking": [
+      "llm_classify:breaking"
+    ],
+    "matched_current": [],
+    "matched_domain": [
+      "sanctions"
+    ]
+  },
+  "engineered_topic": "ANCHOR_EVENT: US sanctions Chinese teapot refinery for buying Iranian oil\nDATE_CONTEXT: TODAY IS April 27, 2026 (2026-04-27). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-20 to 2026-04-27.\nDOMAIN: geopolitical/sanctions\nHIGH_RISK_FIELDS: sanctions_authority, targeted_entities, effective_date, enforcement_mechanism, exemptions\nSEARCH_PRIORITY: AP, Reuters, AFP, BBC, Al Jazeera\n\nRESEARCH_PROMPT: Verify from AP, Reuters, and AFP whether the U.S. imposed sanctions on a Chinese teapot refinery for purchasing Iranian oil during April 20\u201327, 2026, establishing the designating authority (OFAC, State Department, or other), the specific entity name, effective date, and legal basis (IEEPA, ISA, or other statute). Cross-reference regional sources (BBC, Al Jazeera) for Iranian and Chinese official responses and any stated justification for the refinery's purchases. Map the secondary sanctions exposure for third-party traders, shipping companies, and financial institutions that may have facilitated or financed the transactions, distinguishing between confirmed enforcement actions and advisory guidance. Contextualize this action within recent U.S. Iran sanctions policy, the status of the JCPOA, and any stated thresholds for triggering secondary sanctions on Chinese entities. Identify all named refinery operators, parent companies, and any exemptions or wind-down periods announced by Treasury or State. Separate confirmed official statements from unverified claims about Iranian oil volumes or refinery capacity."
+}
