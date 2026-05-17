@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-10T13:25:57.556826",
+  "raw_topic": "Oregon Democrats found a way to improve roads. Now their gas tax goes before voters as prices soar",
+  "parse_result": {
+    "mode": "current",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS May 10, 2026 (2026-05-10). Prioritize coverage from the past 30 days. Date boundary: 2026-04-10 to 2026-05-10.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "Oregon Democrats found a way to improve roads. Now their gas tax goes before voters as prices soar",
+    "matched_breaking": [],
+    "matched_current": [
+      "llm_classify:current"
+    ],
+    "matched_domain": []
+  },
+  "engineered_topic": "ANCHOR_EVENT: Oregon Democrats found a way to improve roads. Now their gas tax goes before voters as prices soar\nDATE_CONTEXT: TODAY IS May 10, 2026 (2026-05-10). Prioritize coverage from the past 30 days. Date boundary: 2026-04-10 to 2026-05-10.\nDOMAIN: general\nHIGH_RISK_FIELDS: none\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: Search AP, Reuters, and AFP wire services first to verify whether Oregon Democrats have proposed a gas tax increase measure scheduled for voter consideration in the April 10\u2013May 10, 2026 window, and confirm the stated rationale linking it to road infrastructure improvement and current fuel price conditions. Once the measure's existence and basic parameters are established, identify the specific legislative sponsors, the tax rate or revenue target proposed, and the voter timeline. Then map the key stakeholder positions: Democratic supporters' stated arguments, Republican or fiscal conservative opposition, business and transportation industry responses, and any public polling on voter sentiment. Flag for verification any specific bill numbers, projected revenue figures, implementation timelines, and named officials' direct quotes before inclusion in analysis. Finally, contextualize this measure within Oregon's broader transportation funding history, current road maintenance backlogs, and how fuel price volatility influenced the timing and framing of the proposal."
+}

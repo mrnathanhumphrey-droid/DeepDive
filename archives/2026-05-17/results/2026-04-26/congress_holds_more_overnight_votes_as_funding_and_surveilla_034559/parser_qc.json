@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-04-26T03:46:21.331989",
+  "raw_topic": "Congress Holds More Overnight Votes as Funding and Surveillance Fights Drag On",
+  "parse_result": {
+    "mode": "breaking",
+    "anchor_year": 0,
+    "domain": "legislative",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 1,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS April 26, 2026 (2026-04-26). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-19 to 2026-04-26.",
+    "search_priority": [
+      "Congress.gov",
+      "AP",
+      "Reuters",
+      "Politico",
+      "The Hill",
+      "Roll Call",
+      "CRS reports",
+      "CBO"
+    ],
+    "urls": [],
+    "clean_topic": "Congress Holds More Overnight Votes as Funding and Surveillance Fights Drag On",
+    "matched_breaking": [
+      "votes"
+    ],
+    "matched_current": [],
+    "matched_domain": [
+      "congress"
+    ]
+  },
+  "engineered_topic": "ANCHOR_EVENT: Congress Holds More Overnight Votes as Funding and Surveillance Fights Drag On\nDATE_CONTEXT: TODAY IS April 26, 2026 (2026-04-26). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-19 to 2026-04-26.\nDOMAIN: legislative\nHIGH_RISK_FIELDS: none\nSEARCH_PRIORITY: Congress.gov, AP, Reuters, Politico, The Hill\n\nRESEARCH_PROMPT: # Research Prompt: Congressional Overnight Votes on Funding and Surveillance Legislation\n\nBegin by verifying the specific bills under debate via Congress.gov and recent wire service reporting (AP, Reuters, NPR Congress coverage); identify bill numbers, sponsors, and current chamber. For each bill identified, retrieve the full legislative text and summarize its operative provisions\u2014what statutory authorities it creates, modifies, or repeals, and how it alters existing appropriations or surveillance law (referencing specific U.S.C. citations and prior enactments it amends). Investigate legislative history via Congress.gov, CRS reports, and committee testimony to establish the policy problems sponsors claim to address, any prior failed legislative attempts on the same issue, and substantive opposition from prior sessions. Map stakeholder positions across federal agencies (particularly OMB, DOD, intelligence community, DOJ), affected private-sector industries (telecommunications, tech platforms, defense contractors), civil liberties organizations, and both caucuses in Congress, documenting their stated rationales and political economy alignments. Identify any constitutional claims raised in floor debate, committee reports, or external litigation\u2014particularly Fourth Amendment surveillance concerns, Commerce Clause or preemption questions, and due process challenges\u2014and note whether sponsors have addressed them legislatively. Finally, confirm current legislative status by cross-referencing Congress.gov vote tallies, floor schedule announcements, and the latest wire service reporting on vote counts, procedural obstacles, and expected timing for final passage or continued negotiation."
+}

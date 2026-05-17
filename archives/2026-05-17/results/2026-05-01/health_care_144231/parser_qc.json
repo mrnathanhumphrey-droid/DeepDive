@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-05-01T14:42:35.187440",
+  "raw_topic": "health care",
+  "parse_result": {
+    "mode": "general",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": false,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS May 01, 2026 (2026-05-01). Prefer sources from the past 12 months where available. Date boundary (soft): 2025-05-01 to 2026-05-01.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "health care",
+    "matched_breaking": [],
+    "matched_current": [],
+    "matched_domain": []
+  },
+  "engineered_topic": "DOMAIN: general\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: # Research Prompt: Healthcare Policy Landscape (May 2025\u2013May 2026)\n\nConduct a comprehensive policy analysis of healthcare governance, focusing on major legislative developments, regulatory changes, and enforcement actions within the past 12 months (prioritize sources from March\u2013May 2026). Identify and map key institutional actors\u2014Congress, executive agencies (CMS, HHS, FDA), state regulators, provider organizations, insurers, patient advocacy groups, and pharmaceutical manufacturers\u2014and analyze their competing interests and positions on current healthcare priorities. Document recent court rulings and administrative rulemaking on coverage, reimbursement, drug pricing, telehealth, or workforce issues, distinguishing between substantive policy shifts and procedural updates. Provide historical context (2015\u20132025) for any major initiative under debate, and where applicable, compare U.S. approaches to healthcare governance with peer nations (Canada, UK, Germany, Australia). Separate empirical evidence (mortality, access, cost outcomes, enrollment data) from industry claims and political rhetoric; flag contested assertions that require independent verification through wire services (AP, Reuters, AFP) before inclusion in analysis. Prioritize reporting from the past 90 days for breaking developments."
+}

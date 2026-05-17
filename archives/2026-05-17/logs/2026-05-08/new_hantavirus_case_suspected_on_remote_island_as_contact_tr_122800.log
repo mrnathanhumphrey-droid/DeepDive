@@ -1,0 +1,33 @@
+2026-05-08 12:28:00,800 INFO run | ========================================================================
+2026-05-08 12:28:00,803 INFO run | RUN 2026-05-08_122800_new_hantavirus_case_suspected_on_remote_ | topic='New hantavirus case suspected on remote island as contact tracing continues'
+2026-05-08 12:28:00,804 INFO run | ========================================================================
+2026-05-08 12:28:01,557 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:28:02,170 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:28:02,709 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:28:06,332 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:29:03,972 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:29:04,029 WARNING agents.base_agent | Citation block JSON parse failed — citations dropped. Error: Expecting ',' delimiter: line 21 column 25 (char 994) | Block preview: {
+  "search_queries": [
+    "hantavirus suspected remote island contact tracing AP Reuters AFP May 2026",
+    "Tristan da Cunha hantavirus British national suspected case May 8 2026 Reuters AP",
+    "St Helena Tristan da Cunha WHO contact tracing hantavirus British overseas territory"
+  ],
+  "verifi
+2026-05-08 12:29:04,050 WARNING agents.orchestrator | [twitter] Agent failed to initialize: TWITTER_BEARER_TOKEN not set in .env
+2026-05-08 12:29:12,366 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:29:24,854 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:29:35,694 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:29:49,240 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:04,040 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:09,695 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:18,749 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:30,087 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:34,638 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:43,108 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:30:49,796 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:31:54,486 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:32:04,298 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:32:44,430 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:32:52,875 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-08 12:32:53,166 INFO httpx | HTTP Request: GET https://chroma-onnx-models.s3.amazonaws.com/all-MiniLM-L6-v2/onnx.tar.gz "HTTP/1.1 200 OK"
+2026-05-08 12:33:22,830 INFO httpx | HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"

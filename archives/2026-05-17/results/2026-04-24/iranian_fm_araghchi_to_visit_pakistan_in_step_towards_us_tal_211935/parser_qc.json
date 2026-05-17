@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-24T21:19:41.710995",
+  "raw_topic": "Iranian FM Araghchi to visit Pakistan in step towards US talks resumption",
+  "parse_result": {
+    "mode": "current",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS April 24, 2026 (2026-04-24). Prioritize coverage from the past 30 days. Date boundary: 2026-03-25 to 2026-04-24.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "Iranian FM Araghchi to visit Pakistan in step towards US talks resumption",
+    "matched_breaking": [],
+    "matched_current": [
+      "llm_classify:current"
+    ],
+    "matched_domain": []
+  },
+  "engineered_topic": "ANCHOR_EVENT: Iranian FM Araghchi to visit Pakistan in step towards US talks resumption\nDATE_CONTEXT: TODAY IS April 24, 2026 (2026-04-24). Prioritize coverage from the past 30 days. Date boundary: 2026-03-25 to 2026-04-24.\nDOMAIN: general\nHIGH_RISK_FIELDS: none\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: Search AP, Reuters, and AFP wire services for coverage dated March 25\u2013April 24, 2026 confirming Iranian Foreign Minister Araghchi's visit to Pakistan and any stated connection to US diplomatic talks resumption; verify the visit dates, announced purpose, and which officials participated. Once the event is confirmed, identify the key stakeholders (Iranian government, Pakistani government, US administration) and their publicly stated positions on the visit's strategic objective, any preconditions for US engagement, and regional implications. Map the institutional context by researching recent Iran-US diplomatic history, Pakistan's stated role as mediator or stakeholder, and any concurrent multilateral negotiations or UN-affiliated processes that this visit references. Flag for verification: the exact timeline of the visit, any joint statements or communiqu\u00e9s issued, specific diplomatic language about \"resumption\" conditions, and whether this reflects a confirmed shift in US policy or remains a preliminary exploratory gesture."
+}

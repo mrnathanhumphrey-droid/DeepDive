@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-05-08T12:28:06.335861",
+  "raw_topic": "New hantavirus case suspected on remote island as contact tracing continues",
+  "parse_result": {
+    "mode": "current",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS May 08, 2026 (2026-05-08). Prioritize coverage from the past 30 days. Date boundary: 2026-04-08 to 2026-05-08.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "New hantavirus case suspected on remote island as contact tracing continues",
+    "matched_breaking": [],
+    "matched_current": [
+      "llm_classify:current"
+    ],
+    "matched_domain": []
+  },
+  "engineered_topic": "ANCHOR_EVENT: New hantavirus case suspected on remote island as contact tracing continues\nDATE_CONTEXT: TODAY IS May 08, 2026 (2026-05-08). Prioritize coverage from the past 30 days. Date boundary: 2026-04-08 to 2026-05-08.\nDOMAIN: general\nHIGH_RISK_FIELDS: none\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: Search AP, Reuters, and AFP wire services for reports of a suspected hantavirus case on a remote island between April 8\u2013May 8, 2026, and verify the island's location, jurisdiction, and whether health authorities have officially confirmed or are still investigating the case. Once you confirm the event and basic facts, identify which public health agencies (national, regional, WHO) are leading the response and contact tracing efforts, and document their stated epidemiological assessments and containment protocols. Map the key stakeholders\u2014including island residents, regional governments, and relevant health ministries\u2014and capture their public statements on outbreak risk, resource needs, and any evacuation or quarantine measures. Flag for verification: the specific island name, confirmed case count versus suspected cases, any named individuals involved in contact tracing, and exact dates of symptom onset and notification; do not report these as facts unless directly sourced from official health communications or wire service reporting. Finally, research the broader policy context around island biosecurity, hantavirus surveillance systems in the region, and any prior preparedness frameworks relevant to this jurisdiction."
+}

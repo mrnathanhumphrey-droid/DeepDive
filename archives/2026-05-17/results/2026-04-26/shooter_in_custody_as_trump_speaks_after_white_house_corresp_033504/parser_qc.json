@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-26T03:35:20.012118",
+  "raw_topic": "Shooter in custody as Trump speaks after White House Correspondents' dinner incident",
+  "parse_result": {
+    "mode": "breaking",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": true,
+    "is_question": false,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS April 26, 2026 (2026-04-26). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-19 to 2026-04-26.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "Shooter in custody as Trump speaks after White House Correspondents' dinner incident",
+    "matched_breaking": [
+      "shooter"
+    ],
+    "matched_current": [],
+    "matched_domain": []
+  },
+  "engineered_topic": "ANCHOR_EVENT: Shooter in custody as Trump speaks after White House Correspondents' dinner incident\nDATE_CONTEXT: TODAY IS April 26, 2026 (2026-04-26). Search ONLY for coverage published in the past 7 days. Date boundary: 2026-04-19 to 2026-04-26.\nDOMAIN: general\nHIGH_RISK_FIELDS: none\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: Search AP, Reuters, and AFP for coverage dated April 19-26, 2026 to verify whether an incident involving a shooter occurred at or near the White House Correspondents' dinner, confirm the shooter's custody status, and establish the basic timeline and location of the event. Once the core incident is confirmed, identify all named individuals involved (suspect, victims, witnesses, officials present) and verify their identities and roles through the same wire services before proceeding. Map the immediate institutional response from Secret Service, law enforcement, and White House communications, documenting any official statements from Trump or other named officials about the incident. Identify key policy stakeholders likely to comment (Congressional leadership, civil rights groups, gun safety advocates, press freedom organizations) and retrieve their stated positions on the incident from news coverage. Flag for verification before inclusion: specific casualty counts, suspect identity and background, weapons used, and any charges filed\u2014cross-reference these details across at least two wire services to confirm accuracy."
+}

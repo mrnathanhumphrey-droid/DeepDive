@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-05-02T12:54:32.495690",
+  "raw_topic": "What is happening with the Musk vs OpenAI cour case?",
+  "parse_result": {
+    "mode": "general",
+    "anchor_year": 0,
+    "domain": "general",
+    "domain_scores": {
+      "legal": 0,
+      "civil_rights": 0,
+      "legislative": 0,
+      "sociological": 0,
+      "civic": 0,
+      "geopolitical": 0,
+      "general": 0
+    },
+    "secondary_domain": "",
+    "subdomain": "",
+    "is_headline": false,
+    "is_question": true,
+    "entities": {},
+    "high_risk_fields": [],
+    "date_context": "TODAY IS May 02, 2026 (2026-05-02). Prefer sources from the past 12 months where available. Date boundary (soft): 2025-05-02 to 2026-05-02.",
+    "search_priority": [
+      "AP",
+      "Reuters",
+      "AFP",
+      "NYT",
+      "WSJ",
+      "BBC"
+    ],
+    "urls": [],
+    "clean_topic": "What is happening with the Musk vs OpenAI cour case?",
+    "matched_breaking": [],
+    "matched_current": [],
+    "matched_domain": []
+  },
+  "engineered_topic": "DOMAIN: general\nSEARCH_PRIORITY: AP, Reuters, AFP, NYT, WSJ\n\nRESEARCH_PROMPT: # Research Prompt: Musk v. OpenAI Litigation\n\n**VERIFICATION FIRST:** Using AP, Reuters, AFP, and NYT as primary sources, verify the current status of any litigation between Elon Musk and OpenAI as of May 2026\u2014including case name(s), jurisdiction(s), and most recent court filings or rulings from the past 90 days. Distinguish between ongoing cases, settled matters, and dismissed claims.\n\n**LEGAL AND REGULATORY ANALYSIS:** Map the specific claims (contract breach, fiduciary duty, antitrust, IP, governance disputes, etc.), identify the court(s) and relevant procedural stage, and document any rulings, injunctions, or orders issued within the 12-month window (May 2025\u2013May 2026). Flag any regulatory agency involvement (FTC, SEC, state attorneys general).\n\n**STAKEHOLDER AND INSTITUTIONAL CONTEXT:** Identify all parties (individual plaintiffs/defendants, corporate entities, counsel), analyze positions and incentives across AI governance, commercial competition, and nonprofit/for-profit conversion debates. Distinguish empirical claims about OpenAI's structure or agreements from contested allegations.\n\n**POLICY IMPLICATIONS:** Analyze how the case's claims or outcomes bear on broader policy questions: AI governance standards, nonprofit-to-for-profit conversions, investor rights in AI companies, or competitive dynamics in generative AI markets.\n\n**SOURCE STANDARDS:** Prioritize reporting from the past 90 days; ensure at least 40% of sourcing spans the full 12-month window. Separate news reporting from commentary; flag any unresolved factual disputes in filings or public statements."
+}
